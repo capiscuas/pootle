@@ -2,79 +2,82 @@
 # Copyright (C) YEAR Zuza Software Foundation (Translate.org.za)
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translate-devel@lists.sourceforge.net\n"
 "POT-Creation-Date: 2008-11-25 10:03+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2011-09-07 10:30+0200\n"
+"Last-Translator: Anar-Erdene <anar_erdene@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: af\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.2.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.2.0-alpha1a\n"
+"X-POOTLE-MTIME: 1315384236.0\n"
 
 #. Welcome to the translate tutorial. You can do the first translation by typing just the translation for "Welcome".
 msgid "Welcome"
-msgstr ""
+msgstr "Тавтай морил"
 
 #. Translate this slightly longer message, and try to see if your current editor supports spell checking for your language if you spell something wrong.
 msgid "This file gives help to learn about translation"
-msgstr ""
+msgstr "Орчуулгын тухай мэдээлэл авхад энэхүү файл таньд тусална"
 
 #. This tutorial will show you some of the things you might want to give attention to while translating software programs. It will help you to avoid some problems, and to translate with higher quality.
 msgid "Quality is important"
-msgstr ""
+msgstr "Чанар бол чухал"
 
 #. Some of the advice will only be relevant for some languages. For example, if your language doesn't use the Latin alphabet, some of the advice might not be relevant to translation in your language. For many languages, there are established rules of how to translate.
 msgid "Languages are different"
-msgstr ""
+msgstr "Хэл бүр харилцан адилгүй"
 
 #. The correct use of capital letters are important in many languages. Translate this message with careful attention to write "Pootle" with a capital letter.
 msgid "The product we use, is called Pootle"
-msgstr ""
+msgstr "Бидний ашиглаж буй бүтээгдэхүүн бол Pootle"
 
 #. In this message the English uses a capital letter for almost every word. Almost no other language uses this style. Unless your language definitely needs to follow the English style (also called Title Case), translate this by following the normal capitalisation rules for your language. If your language does not use capital letters, simply translate it normally.
 msgid "Download the File Now"
-msgstr ""
+msgstr "Яг одоо мэдээллийн сангаа татаж ав"
 
 #. This is a simple message that starts with a capital letter in English. If your language uses capital letters, you almost definitely want to start your translation with a capital letter as well.
 msgid "Time"
-msgstr ""
+msgstr "Цаг"
 
 #. This is a simple message that starts with a lower case letter in English. If your language uses capital letters, you almost definitely want to start your translation with a lower case letter as well.
 msgid "later"
-msgstr ""
+msgstr "Дараа"
 
 #. This message is a question. Make sure that you use the correct question mark for your translation as well.
 msgid "What is your name?"
-msgstr ""
+msgstr "Таны нэр хэн бэ?"
 
 #. This message is a label as part of a form. Note how it ends with a colon (:).
 msgid "Name:"
-msgstr ""
+msgstr "Нэр"
 
 #. This message ends with ... to indicate that clicking on this text will cause a dialogue to appear instead of just performing an action. Be sure to end your message with ... as well.
 msgid "Save As..."
-msgstr ""
+msgstr "...хэлбэрээр хадгалах"
 
 #. This message ends with a special character that looks like three dots. Copy and paste the character, or use the program function to copy the original string so that you have the special character in your translation. Don't just type three dot characters.
 msgid "Save As…"
-msgstr ""
+msgstr "... хэлбэрээр хадгалах"
 
 #. This message has two sentences. Translate them and make sure you start each with a capital letter if your language uses them, and end each sentence properly.
 msgid "Always try your best. Many people are available to learn from."
 msgstr ""
+"Үргэлж хамаг чадлаараа хичээ. Түүнээс тань олон хүмүүс суралцах боломжтой"
 
 #. This message marks the word "now" as important with bold tags. Leave the <b> and </b> in the translation around the part that corresponds to "now". Read more about XML markup here: http://en.wikipedia.org/wiki/XML
 msgid "Restart the program <b>now</b>"
-msgstr ""
+msgstr "<b> одоо <b> програмыг дахин ачаал"
 
 #. In this message, "%d" is a placeholder (variable) that represents a number. Make sure your translation contains %d somewhere. In this case it refers a number of files. When this message is used, the %d will be replaced with a number e.g. 'Number of files copied: 5'.
 msgid "Number of files copied: %d"
-msgstr ""
+msgstr "Хуулагдсан файлын тоо: %"
 
 #. In this message, "%d" refers again to the number of files, but note how the "(s)" is used to show that we don't know how many it will be. This is often hard to translate well. If you encounter this in software translation, you might want to hear from developers if this can be avoided. Read more about this and decide how to do it in your language: http://translate.sourceforge.net/wiki/guide/translation/plurals
 msgid "%d file(s) will be downloaded"
@@ -102,7 +105,7 @@ msgstr ""
 msgid "Please enter your password here"
 msgstr ""
 
-#. In this message there is reference to "Linux" (a product name). Many languages will not translate it, but your language might use a transliteration if you don't use the Latin script for your language.
+#. In this message there is reference to "Linux" (a product name). Many languages will not translate it, but your language might use a translitiration if you don't use the Latin script for your language.
 msgid "This software runs on Linux"
 msgstr ""
 

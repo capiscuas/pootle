@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME Glossary\n"
 "POT-Creation-Date: 2003-07-16 09:32+0200\n"
-"PO-Revision-Date: 2010-08-03 20:21+0200\n"
-"Last-Translator: Halina Arendt <halare@gmail.com>\n"
+"PO-Revision-Date: 2013-01-02 21:32+0200\n"
+"Last-Translator: Skejt <michal90ns@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.1.0-beta2\n"
+"X-Generator: Pootle 2.2.0-alpha1a\n"
+"X-POOTLE-MTIME: 1357155134.0\n"
 
 #. "English Definition"
 msgid "Term"
@@ -64,7 +65,7 @@ msgid "Actuator"
 msgstr "Aktuator"
 
 msgid "Add"
-msgstr "Dołączenie"
+msgstr "Dołączenie / Dodaj"
 
 #. "1. A number specifying a location in memory where data is stored. 2. A unique code that specifies a particular computer (node) or site on the Internet or other network. 3. A code used to specify an e-mail destination."
 msgid "Address"
@@ -97,7 +98,7 @@ msgstr "Alfa"
 
 #. "The high-order 8 bits of a 32-bit graphics pixel used to manipulate the remaining 24 bits for purposes of coloring or masking. In computer graphics, memory associated with each pixel used to store the fractional coverage of the pixel."
 msgid "alpha channel"
-msgstr "Kanał alfa"
+msgstr "kanał alfa"
 
 #. "Pertaining to a device or signal that is continuously varying in strength or quantity, such as voltage or audio, rather than based on discrete units, such as the binary digits 1 and 0. "
 msgid "Analog"
@@ -117,7 +118,7 @@ msgstr "i"
 
 #. "The simulation of movement through a rapid succession of static images. "
 msgid "Animation"
-msgstr "Obrazy ruchome"
+msgstr "Animacja"
 
 #. "On the Internet, the standard login name used to obtain access to a public FTP file archive. "
 msgid "Anonymous"
@@ -145,7 +146,7 @@ msgstr "Aplikacja"
 
 #. "A button in the panel which launches an application or executes a command when pressed."
 msgid "Application Launcher"
-msgstr "Aktywator aplikacji"
+msgstr "Start aplikacji"
 
 msgid "Applix"
 msgstr "Applix"
@@ -216,7 +217,7 @@ msgstr "Wypełnianie automatyczne"
 
 #. "In processing, the accessibility of a computer system or resource, such as a printer, in terms of usage or of the percentage of the total amount of time the device is needed."
 msgid "Availability"
-msgstr "zapotrzebowanie / udostępnienie"
+msgstr "Dostępność"
 
 msgid "Average"
 msgstr "Średnia"
@@ -227,15 +228,15 @@ msgstr "Oś"
 
 #. "In the context of processes or tasks that are part of an operating system or program, operating without interaction with the user while the user is working on another task. In the UNIX command line, the character <literal>&amp;</literal> appended to a command will make that command run in the background."
 msgid "Background"
-msgstr "Działalność zapleczowa"
+msgstr "Działanie w tle"
 
 #. "A duplicate copy of a program, a disk, or data, made either for archiving purposes or for safeguarding valuable files from loss should the active copy be damaged or destroyed. "
 msgid "Backup"
-msgstr "Archiwum/ Materiał powielony /Powielanie"
+msgstr "Archiwum/ Materiał zapasowy"
 
 #. "Adjustment of sources of sound so that the final transmission adheres to an artistic standard."
 msgid "Balance"
-msgstr "Synchronizacja (źródeł dźwięku)"
+msgstr "Balans"
 
 #. "In mathematics, a number that is raised to the power specified by an exponent. For example, in 23 = 2 × 2 × 2 = 8, the base is 2. "
 msgid "Base"
@@ -243,7 +244,7 @@ msgstr "Podstawa"
 
 #. "An executable program, so called because the file containing the program consists of machine-readable binary digits, i.e. ones and zeroes."
 msgid "Binary"
-msgstr "Program dwójkowy"
+msgstr "Binarny"
 
 #. "1. Language-dependent code that allows a software library to be called from that computer language. 2. The process during which a client finds out where a server is so that the client can receive services. "
 msgid "Binding"
@@ -263,10 +264,10 @@ msgstr "Bitmapa"
 
 #. "To not show or not display an image on part or all of the screen."
 msgid "Blank"
-msgstr "Wygaszanie"
+msgstr "Pustka"
 
 msgid "Blinking cursor"
-msgstr "Wskaźnik (pozycji) migający"
+msgstr "Migający kursor"
 
 msgid "block buffer"
 msgstr "bufor blokowy"
@@ -276,7 +277,7 @@ msgid "Blocked"
 msgstr "Zablokowany"
 
 msgid "Blur image"
-msgstr "Zamaskowanie obrazu"
+msgstr "Rozmazany obraz"
 
 #. "1. In e-mail and Internet newsgroups, the content of a message. 2. In HTML, SGML, and XML, a section of a document that contains the content of the document, along with tags describing characteristics of the content."
 msgid "body"
@@ -288,11 +289,11 @@ msgstr "tłusty druk"
 
 #. "1. A marker inserted at a specific point in a document to which the user may wish to return for later reference. 2. In Netscape Navigator, a link to a Web page or other URL that a user has stored in a local file in order to return to it later. "
 msgid "book mark"
-msgstr "znacznik"
+msgstr "zakładka"
 
 #. "Characteristic of logical (true, false) values. "
 msgid "Boolean"
-msgstr "Logiczny"
+msgstr "Wartość logiczna"
 
 #. "The boundary around a graphic image on screen. "
 msgid "Box"
@@ -307,7 +308,7 @@ msgstr "Cegły"
 
 #. "To scan a database, a list of files, or the Internet, either for a particular item or for anything that seems to be of interest. "
 msgid "Browse"
-msgstr "Przegląd"
+msgstr "Przeglądaj"
 
 #. "Software that lets a user view HTML documents and access files and software related to those documents. "
 msgid "Browser"
@@ -319,7 +320,7 @@ msgstr "Bufor"
 
 #. "An error in coding or logic that causes a program to malfunction or to produce incorrect results. "
 msgid "bug"
-msgstr "chochlik"
+msgstr "bug / błąd"
 
 msgid "Build"
 msgstr "wytworzenie / stworzenie"
@@ -338,7 +339,7 @@ msgstr "Magistrala"
 
 #. "Temporarily performing a function or task."
 msgid "Busy"
-msgstr "zajęty, -a, -e"
+msgstr "Zajęty"
 
 #. "A graphic element in a dialog box that, when activated, performs a specified function. "
 msgid "Button"
@@ -366,19 +367,19 @@ msgstr "Kalendarz"
 
 #. "To establish a connection through a telecommunications network. "
 msgid "Call"
-msgstr "Numer do wykręcenia"
+msgstr "Zadzwoń / Rozmowa telefoniczna"
 
 msgid "Cancel"
-msgstr "Anulacja"
+msgstr "Anuluj"
 
 msgid "canvas"
 msgstr "płótno"
 
 msgid "Caption"
-msgstr "Podpis (pod /nad ilustracją)"
+msgstr "Nagłówek / Podpis"
 
 msgid "Case Sensitive"
-msgstr "Rozróżnianie wielkości liter"
+msgstr "Uwzględnia wielkość liter"
 
 #. "Groups of like settings in a property window."
 msgid "Categories"
@@ -436,13 +437,13 @@ msgstr "proces potomny"
 
 #. "In object-oriented programming, a generalized category that describes a group of more specific items, called objects, that can exist within it. "
 msgid "Class"
-msgstr "Klasa"
+msgstr ""
 
 msgid "Classification"
 msgstr "Klasyfikacja"
 
 msgid "Clear"
-msgstr "Usunięcie"
+msgstr "Wyczyść"
 
 #. "The temporary buffer into which text or other data can be copied, to be used later by pasting into a different location. Most applications support the clipboard either through native mouse-based cut and paste functionality of X Window System, or through s"
 msgid "Clipboard"
@@ -513,7 +514,7 @@ msgid "Configuration"
 msgstr "Konfiguracja"
 
 msgid "Confirm"
-msgstr "do potwierdzenia"
+msgstr "Potwierdź"
 
 msgid "Confirmation"
 msgstr "potwierdzenie"
@@ -532,7 +533,7 @@ msgstr "Zawartość"
 
 #. "libgtop.pot"
 msgid "Continue"
-msgstr "Ciąg dalszy"
+msgstr "Kontynuuj"
 
 #. "Management of a computer and its processing abilities so as to maintain order as tasks and activities are carried out. In a graphical user interface, an object on the screen that can be manipulated by the user to perform an action. The most common control"
 msgid "Control"
@@ -540,19 +541,19 @@ msgstr "Nadzór"
 
 #. "The process of changing from one form or format to another. Types of conversion include: data (changing the way information is represented), file (changing a file from one format to another), hardware (changing all or part of a computer system), media (tr"
 msgid "Conversion"
-msgstr "przetworzenie"
+msgstr "Konwersja / Zmiana"
 
 #. "On the World Wide Web, a block of data that a Web server stores on a client system. When a user returns to the same Web site, the browser sends a copy of the cookie back to the server. "
 msgid "cookie"
-msgstr "wtyczka"
+msgstr "ciasteczko"
 
 #. "To duplicate information and reproduce it in another part of a document, in a different file or memory location, or in a different medium. "
 msgid "Copy"
-msgstr "Powielenie /Duplikat"
+msgstr "Kopiowanie"
 
 #. "A method of protecting the rights of an originator of a creative work, such as a text, a piece of music, a painting, or a computer program, through law. "
 msgid "Copyright"
-msgstr "Prawa autorskie /twórcze"
+msgstr "Prawa autorskie"
 
 #. "Acronym for Common Object Request Broker Architecture. A specification developed by the Object Management Group in 1992 in which pieces of programs (objects) communicate with other objects in other programs, even if the two programs are written in differe"
 msgid "CORBA"
@@ -581,7 +582,7 @@ msgstr "Kowariancja"
 
 #. "Acronym for central processing unit. The computational and control unit of a computer. The CPU is the device that interprets and executes instructions. By definition, the CPU is the chip that functions as the 'brain' of a computer. "
 msgid "CPU"
-msgstr "CPU"
+msgstr "CPU / procesor"
 
 #. "For a system or program, to fail to function correctly, resulting in the suspension of operation. A program crash results in the loss of all unsaved data and can leave the operating system unstable enough to require restarting the computer. A disk drive c"
 msgid "crash"
@@ -602,7 +603,7 @@ msgid "Crop"
 msgstr "Obróbka"
 
 msgid "Cross-reference"
-msgstr "Odsyłacz"
+msgstr "Odsyłacz / Odwołanie"
 
 #. "Short for control. A designation used to label the Control key on computer keyboards. "
 msgid "Ctrl"
@@ -618,7 +619,7 @@ msgstr "Natężenie"
 
 #. "A highlighted or animated icon which indicates the current position of the mouse on the screen, or the position where keyboard input will occur in a text window."
 msgid "cursor"
-msgstr "wskaźnik (pozycji)"
+msgstr "kursor / wskaźnik"
 
 msgid "Curve"
 msgstr "Krzywa"
@@ -632,7 +633,7 @@ msgstr "Okno specjalne"
 
 #. "To remove part of a document, usually placing it temporarily in memory or the clipboard so that the cut portion can be inserted (pasted) elsewhere. "
 msgid "Cut"
-msgstr "do usunięcia"
+msgstr "Wytnij"
 
 #. "A background process providing basic system or network services. A daemon is activated only when needed, for example, to correct an error from which another program cannot recover."
 msgid "Daemon"
@@ -648,14 +649,14 @@ msgstr "baza danych"
 
 #. "To detect, locate, and correct logical or syntactical errors in a program or malfunctions in hardware. In hardware contexts, the term troubleshoot is the term more often used."
 msgid "Debug"
-msgstr "Usunięcie chochlika"
+msgstr "Debuguj / Diagnozuj"
 
 #. "The base-10 numbering system. "
 msgid "decimal"
-msgstr "dziesiętn/y/a/e"
+msgstr "dziesiętny"
 
 msgid "Decrease"
-msgstr "Zmniejszenie"
+msgstr "Spadek"
 
 #. "A choice made by a program when the user does not specify an alternative."
 msgid "Default"
@@ -663,7 +664,7 @@ msgstr "Ustawienia wstępne"
 
 #. "To eliminate text, a file, or part of a document with the intention of removing the information permanently. "
 msgid "Delete"
-msgstr "Usunięcie"
+msgstr "Usuń"
 
 #. "The state in which one entity relies upon specific hardware, software, or specific events for its own definition or functionality. "
 msgid "Dependence"
@@ -2049,7 +2050,7 @@ msgstr "Wielokąt"
 
 #. "An open shape consisting of multiple connected segments. Polylines are used in CAD and other graphics programs. "
 msgid "Polyline"
-msgstr ""
+msgstr "Linia łamana"
 
 msgid "Pooled Variance"
 msgstr ""
@@ -2068,7 +2069,7 @@ msgstr "Portret"
 
 #. "The server and associated storage and mail handling services that provide the centralized location for collection and distribution of e-mail over a network."
 msgid "Post Office"
-msgstr ""
+msgstr "Poczta"
 
 #. "A device or a software routine, such as a linker, that operates on data manipulated first by another processor. "
 msgid "Post Processor"
@@ -2242,11 +2243,12 @@ msgid "Range"
 msgstr "zgrupowanie / zakres"
 
 msgid "Rank"
-msgstr ""
+msgstr "Ranga"
 
 #. "Specified limit to operating conditions, e.g. current rating."
+#, fuzzy
 msgid "Rating"
-msgstr ""
+msgstr "Notowania"
 
 msgid "Ratio"
 msgstr "Stosunek"

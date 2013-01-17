@@ -3,15 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-02-27 16:12+0200\n"
-"PO-Revision-Date: 2010-07-06 14:26+0200\n"
-"Last-Translator: Peter <peterlamby@web.de>\n"
+"PO-Revision-Date: 2011-02-11 21:07+0200\n"
+"Last-Translator: pqzeus <tim_reinies@web.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.0-beta2\n"
+"X-Generator: Pootle 2.2.0-alpha1a\n"
+"X-POOTLE-MTIME: 1297451244.0\n"
 
 # Essential terminology list for general software localisation
 # License: GPL
@@ -957,9 +958,8 @@ msgid "dialog"
 msgstr "Dialog"
 
 # wird wohl bei der Wahl der Verbindungsart benötigt, vielleicht sollte man da eher "Analog-Modem" nehmen
-#, fuzzy
 msgid "dialup"
-msgstr "Wählleitung"
+msgstr "Einwahl"
 
 msgid "difference"
 msgstr "Unterschied"
@@ -2425,21 +2425,17 @@ msgstr "Warteschlange"
 msgid "quit"
 msgstr "beenden"
 
-#, fuzzy
 msgid "quota"
-msgstr "Kontingent"
+msgstr "Quote"
 
-#, fuzzy
 msgid "quotation"
-msgstr "Drehung"
+msgstr "Kurs"
 
-#, fuzzy
 msgid "quote"
-msgstr "Kontingent"
+msgstr "Angebot"
 
-#, fuzzy
 msgid "raise"
-msgstr "Nach oben"
+msgstr "anheben"
 
 msgid "random"
 msgstr "Zufall"
@@ -2568,13 +2564,11 @@ msgstr "verbleibend"
 msgid "remind"
 msgstr "erinnern"
 
-#, fuzzy
 msgid "remote"
-msgstr "CDDB-Server"
+msgstr "abgelegen"
 
-#, fuzzy
 msgid "removable"
-msgstr "entfernen,"
+msgstr "entfernbar"
 
 msgid "remove"
 msgstr "entfernen"
@@ -2585,7 +2579,6 @@ msgstr "umbenennen"
 msgid "render"
 msgstr "rendern"
 
-#, fuzzy
 msgid "renew"
 msgstr "erneuern"
 
@@ -2598,13 +2591,11 @@ msgstr "wiederholen"
 msgid "replace"
 msgstr "ersetzen"
 
-#, fuzzy
 msgid "replicate"
-msgstr "Duplizieren"
+msgstr "replizieren"
 
-#, fuzzy
 msgid "replication"
-msgstr "Programm"
+msgstr "Replik"
 
 msgid "reply"
 msgstr "antworten"
@@ -2633,9 +2624,8 @@ msgstr "Größe ändern"
 msgid "resolution"
 msgstr "Auflösung"
 
-#, fuzzy
 msgid "resolver"
-msgstr "Konflikt beseitigt"
+msgstr "Konfliktlöser"
 
 msgid "resource"
 msgstr "Ressource"
@@ -2650,11 +2640,10 @@ msgid "restore"
 msgstr "wiederherstellen"
 
 msgid "restrict"
-msgstr ""
+msgstr "einschränken"
 
-#, fuzzy
 msgid "restriction"
-msgstr "restriction"
+msgstr "Einschränkung"
 
 msgid "result"
 msgstr "Ergebnis"
@@ -2662,30 +2651,24 @@ msgstr "Ergebnis"
 msgid "resume"
 msgstr "wiederaufnehmen"
 
-#, fuzzy
 msgid "retrieve"
-msgstr "&Abholen"
+msgstr "zurückbringen"
 
-#, fuzzy
 msgid "retry"
-msgstr "Erneuter Versuch"
+msgstr "wiederversuchen"
 
-#, fuzzy
 msgid "return"
-msgstr "Eingabe"
+msgstr "zurückkehren"
 
-#, fuzzy
 msgid "reverse"
-msgstr "Umkehren"
+msgstr "umkehren"
 
-#, fuzzy
 msgid "revert"
 msgstr "Lokale Änderungen verwerfen"
 
 msgid "revocation"
-msgstr ""
+msgstr "Rückruf"
 
-#, fuzzy
 msgid "revoke"
 msgstr "Zurückziehen"
 
@@ -2696,18 +2679,17 @@ msgid "rotate"
 msgstr "drehen"
 
 msgid "route"
-msgstr ""
+msgstr "Route"
 
 msgid "router"
-msgstr ""
+msgstr "Router"
 
 msgid "routine"
-msgstr ""
+msgstr "Routine"
 
 msgid "row"
 msgstr "row"
 
-#, fuzzy
 msgid "rule"
 msgstr "Regel"
 
@@ -2724,7 +2706,7 @@ msgid "sample"
 msgstr "Probe"
 
 msgid "sans"
-msgstr ""
+msgstr "ohne"
 
 msgid "save"
 msgstr "speichern"
@@ -2738,7 +2720,6 @@ msgstr "skalieren"
 msgid "scan"
 msgstr "suchen"
 
-#, fuzzy
 msgid "scanner"
 msgstr "Scanner"
 
@@ -2749,12 +2730,11 @@ msgid "scheme"
 msgstr "Schema"
 
 msgid "scratch"
-msgstr ""
+msgstr "Mülleimer"
 
 msgid "screen"
 msgstr "Bildschirm"
 
-#, fuzzy
 msgid "screw"
 msgstr "Schraube"
 
@@ -2789,7 +2769,7 @@ msgid "segment"
 msgstr "Strecke"
 
 msgid "segmentation"
-msgstr ""
+msgstr "Segmentierung"
 
 msgid "select"
 msgstr "auswählen"
@@ -2806,11 +2786,9 @@ msgstr "senden"
 msgid "sender"
 msgstr "Absender"
 
-#, fuzzy
 msgid "sensitive"
-msgstr "Verwenden"
+msgstr "sensibel"
 
-#, fuzzy
 msgid "sensor"
 msgstr "Sensor"
 
@@ -2824,12 +2802,11 @@ msgid "session"
 msgstr "Sitzung"
 
 msgid "set"
-msgstr ""
+msgstr "Set"
 
 msgid "settings"
 msgstr "Einstellungen"
 
-#, fuzzy
 msgid "setup"
 msgstr "Einrichtung"
 
@@ -2851,9 +2828,8 @@ msgstr "scharf"
 msgid "sheet"
 msgstr "Tabelle"
 
-#, fuzzy
 msgid "shell"
-msgstr "shell"
+msgstr "Hülle"
 
 msgid "shift"
 msgstr "Umschalt"
@@ -2882,31 +2858,27 @@ msgstr "Signal"
 msgid "signature"
 msgstr "Signatur"
 
-#, fuzzy
 msgid "site"
-msgstr "Server"
+msgstr "Seite"
 
 msgid "size"
 msgstr "Größe"
 
-#, fuzzy
 msgid "skew"
-msgstr "Kippen"
+msgstr "kippen"
 
 msgid "skip"
 msgstr "überspringen"
 
 msgid "slave"
-msgstr ""
+msgstr "Sklave"
 
 msgid "sleep"
 msgstr "warten"
 
-#, fuzzy
 msgid "slide"
-msgstr "Dia"
+msgstr "rutschen"
 
-#, fuzzy
 msgid "slot"
 msgstr "Slot"
 
@@ -2919,7 +2891,6 @@ msgstr "smiley"
 msgid "smooth"
 msgstr "glatt"
 
-#, fuzzy
 msgid "socket"
 msgstr "Socket"
 
@@ -2944,13 +2915,11 @@ msgstr "Abstände"
 msgid "spam"
 msgstr "Spam"
 
-#, fuzzy
 msgid "span"
-msgstr "Panorama"
+msgstr "Spanne"
 
-#, fuzzy
 msgid "spawn"
-msgstr "Panorama"
+msgstr "hervorbringen"
 
 msgid "specify"
 msgstr "bestimmen"
@@ -2968,7 +2937,7 @@ msgid "split"
 msgstr "teilen"
 
 msgid "spool"
-msgstr ""
+msgstr "spulen"
 
 msgid "spread sheet"
 msgstr "Tabellenkalkulation"
@@ -2976,7 +2945,6 @@ msgstr "Tabellenkalkulation"
 msgid "stack"
 msgstr "Stapel"
 
-#, fuzzy
 msgid "stand alone"
 msgstr "einzeln"
 
@@ -2986,12 +2954,11 @@ msgstr "Standard"
 msgid "start"
 msgstr "starten"
 
-#, fuzzy
 msgid "state"
-msgstr "Besitz"
+msgstr "Staat"
 
 msgid "static"
-msgstr ""
+msgstr "statisch"
 
 msgid "statistics"
 msgstr "Statistiken"
@@ -3002,103 +2969,87 @@ msgstr "step"
 msgid "stop"
 msgstr "anhalten"
 
-#, fuzzy
 msgid "storage"
-msgstr "Speichern"
+msgstr "Speicher"
 
-#, fuzzy
 msgid "store"
 msgstr "Speichern"
 
-#, fuzzy
 msgid "stream"
-msgstr "Stream"
+msgstr "Fluss"
 
 msgid "stretch"
 msgstr "strecken"
 
 msgid "strict"
-msgstr ""
+msgstr "strikt"
 
 msgid "string"
 msgstr "string"
 
-#, fuzzy
 msgid "strip"
-msgstr "Entfernen"
+msgstr "entfernen"
 
-#, fuzzy
 msgid "stroke"
 msgstr "Strich"
 
-#, fuzzy
 msgid "structure"
-msgstr "Strukturen"
+msgstr "strukturieren"
 
 msgid "stub"
-msgstr ""
+msgstr "Stub"
 
-#, fuzzy
 msgid "style"
-msgstr "Stil 1"
+msgstr "Stil"
 
-#, fuzzy
 msgid "sub directory"
-msgstr "Ordner hinzufügen"
+msgstr "Unterverzeichnis"
 
 msgid "sub folder"
-msgstr ""
+msgstr "Unterordner"
 
 msgid "submission"
-msgstr ""
+msgstr "Übertragung"
 
-#, fuzzy
 msgid "submit"
-msgstr "Absenden"
+msgstr "übertragen"
 
-#, fuzzy
 msgid "subscribe"
-msgstr "Kündigen"
+msgstr "unterschreiben"
 
 #, fuzzy
 msgid "subscription"
 msgstr "Abonnieren"
 
-#, fuzzy
 msgid "subtract"
 msgstr "Abziehen"
 
 msgid "succeed"
-msgstr ""
+msgstr "gelingen"
 
-#, fuzzy
 msgid "suggest"
-msgstr "Schlägt vor"
+msgstr "vorschlagen"
 
-#, fuzzy
 msgid "suggestion"
-msgstr "Hinweise"
+msgstr "Hinweis"
 
 msgid "sum (noun)"
-msgstr ""
+msgstr "Summe"
 
 msgid "sum (verb)"
-msgstr ""
+msgstr "summieren"
 
 msgid "summary"
 msgstr "Zusammenfassung"
 
-#, fuzzy
 msgid "support"
-msgstr "Support"
+msgstr "unterstützen"
 
-#, fuzzy
 msgid "surface"
 msgstr "Oberfläche"
 
-#, fuzzy
 msgid "suspend"
-msgstr "Ruhezustand"
+msgstr "aussetzen"
 
 msgid "suspicious"
 msgstr ""
@@ -3138,21 +3089,17 @@ msgstr ""
 msgid "target"
 msgstr "Ergebnis"
 
-#, fuzzy
 msgid "template"
-msgstr "Vorlagen"
+msgstr "Vorlage"
 
-#, fuzzy
 msgid "temporary"
-msgstr "Temporär"
+msgstr "temporär"
 
-#, fuzzy
 msgid "terminal"
-msgstr "Terminal"
+msgstr "terminal"
 
-#, fuzzy
 msgid "test"
-msgstr "Beste"
+msgstr "testen"
 
 msgid "text"
 msgstr "Text"
@@ -3160,32 +3107,26 @@ msgstr "Text"
 msgid "texture"
 msgstr "Textur"
 
-#, fuzzy
 msgid "theme"
 msgstr "Stil"
 
-#, fuzzy
 msgid "thread"
-msgstr "thead"
+msgstr "einfädeln"
 
-#, fuzzy
 msgid "thumbnail"
 msgstr "Minibild"
 
-#, fuzzy
 msgid "tick"
-msgstr "Kick"
+msgstr "ankreuzen"
 
-#, fuzzy
 msgid "tile"
-msgstr "Titel"
+msgstr "kacheln"
 
 msgid "time"
 msgstr "Zeit"
 
-#, fuzzy
 msgid "time out"
-msgstr "Wartezeit abgelaufen"
+msgstr "Time-out"
 
 msgid "tip"
 msgstr "Tipp"
@@ -3193,119 +3134,99 @@ msgstr "Tipp"
 msgid "title"
 msgstr "Titel"
 
-#, fuzzy
 msgid "toggle"
-msgstr "An-/Ausschalten"
+msgstr "umschalten"
 
 msgid "token"
-msgstr ""
+msgstr "Pfandmarke"
 
-#, fuzzy
 msgid "tool"
-msgstr "bool"
+msgstr "Werkzeug"
 
-#, fuzzy
 msgid "tool bar"
 msgstr "Werkzeugleiste"
 
-#, fuzzy
 msgid "tool box"
-msgstr "Werkzeuge"
+msgstr "Werkzeugkasten"
 
-#, fuzzy
 msgid "topic"
-msgstr "Topic"
+msgstr "Thema"
 
-#, fuzzy
 msgid "trace"
-msgstr "Profildatei"
+msgstr "Spur"
 
-#, fuzzy
 msgid "track"
-msgstr "Stücke"
+msgstr "Gleis"
 
-#, fuzzy
 msgid "traffic"
 msgstr "Verkehr"
 
-#, fuzzy
 msgid "transfer"
-msgstr "Übertragen"
+msgstr "übertragen"
 
-#, fuzzy
 msgid "transform"
-msgstr "Transformieren"
+msgstr "transformieren"
 
-#, fuzzy
 msgid "transformation"
-msgstr "Transformationen"
+msgstr "Transformation"
 
 msgid "trap"
-msgstr ""
+msgstr "Falle"
 
 msgid "trash"
 msgstr "Mülleimer"
 
-#, fuzzy
 msgid "trigger"
 msgstr "Auslöser"
 
 msgid "trouble shoot"
-msgstr ""
+msgstr "Fehlersuche"
 
-#, fuzzy
 msgid "tune"
-msgstr "Juni"
+msgstr "Stimmung"
 
 msgid "tweak"
-msgstr ""
+msgstr "optimieren"
 
 msgid "type (noun)"
-msgstr ""
+msgstr "Typ"
 
 msgid "type (verb)"
-msgstr ""
+msgstr "tippen"
 
 msgid "type face"
-msgstr ""
+msgstr "Schriftbild"
 
 msgid "unavailable"
 msgstr "nicht verfügbar"
 
-#, fuzzy
 msgid "undelete"
-msgstr "Lösch"
+msgstr "wiederherstellen"
 
-#, fuzzy
 msgid "under line"
-msgstr "Unterstrichen"
+msgstr "unter Linie"
 
-#, fuzzy
 msgid "undo"
-msgstr "Rückgängig"
+msgstr "annulieren"
 
 #, fuzzy
 msgid "uninstall"
-msgstr "&Deinstallieren"
+msgstr "deinstallieren"
 
-#, fuzzy
 msgid "unit"
 msgstr "Einheit"
 
 msgid "unknown"
 msgstr "unbekannt"
 
-#, fuzzy
 msgid "unload"
-msgstr "Entladen"
+msgstr "entladen"
 
-#, fuzzy
 msgid "named"
-msgstr "Name"
+msgstr "genannt"
 
-#, fuzzy
 msgid "reachable"
-msgstr "lesbar"
+msgstr "erreichbar"
 
 msgid "readable"
 msgstr "lesbar"
@@ -3313,21 +3234,17 @@ msgstr "lesbar"
 msgid "unspecified"
 msgstr "nicht festgelegt"
 
-#, fuzzy
 msgid "unsubscribe"
-msgstr "Kündigen"
+msgstr "kündigen"
 
-#, fuzzy
 msgid "unsupported"
-msgstr "nicht unterstützt,"
+msgstr "nicht unterstützt"
 
-#, fuzzy
 msgid "update"
-msgstr "Aktualisieren"
+msgstr "aktualisieren"
 
-#, fuzzy
 msgid "upgrade"
-msgstr "Aktualisieren"
+msgstr "aufrüsten"
 
 #, fuzzy
 msgid "upload"
@@ -3356,15 +3273,12 @@ msgstr ""
 msgid "valid"
 msgstr "Gültig"
 
-#, fuzzy
 msgid "validation"
-msgstr "Überprüfung"
+msgstr "Validierung"
 
-#, fuzzy
 msgid "validity"
 msgstr "Gültigkeit"
 
-#, fuzzy
 msgid "value"
 msgstr "Wert"
 
@@ -3375,22 +3289,19 @@ msgid "vector"
 msgstr "Vektor"
 
 msgid "verbose"
-msgstr ""
+msgstr "wortreich"
 
-#, fuzzy
 msgid "verify"
-msgstr "Überprüfen"
+msgstr "überprüfen"
 
 msgid "version"
 msgstr "Version"
 
-#, fuzzy
 msgid "video"
 msgstr "Video"
 
-#, fuzzy
 msgid "view"
-msgstr "Ansicht"
+msgstr "betrachten"
 
 msgid "viewer"
 msgstr "Betrachter"
@@ -3407,54 +3318,47 @@ msgstr "visuell"
 msgid "volume"
 msgstr "Lautstärke"
 
-#, fuzzy
 msgid "wallpaper"
-msgstr "Hintergrundmuster"
+msgstr "Wallpaper"
 
-#, fuzzy
 msgid "warn"
-msgstr "swarn"
+msgstr "warnen"
 
 msgid "web"
-msgstr ""
+msgstr "Web"
 
 msgid "web cam"
-msgstr ""
+msgstr "Webkamera"
 
-#, fuzzy
 msgid "web master"
 msgstr "Webmaster"
 
-#, fuzzy
 msgid "web page"
-msgstr "Webseite:"
+msgstr "Webseite"
 
-#, fuzzy
 msgid "widget"
-msgstr "widget2"
+msgstr "Widget"
 
 msgid "width"
 msgstr "Breite"
 
 msgid "wi fi"
-msgstr ""
+msgstr "Wi-fi"
 
 msgid "wild card"
-msgstr ""
+msgstr "Wildcard"
 
-#, fuzzy
 msgid "window"
 msgstr "Fenster"
 
-#, fuzzy
 msgid "wizard"
 msgstr "Assistent"
 
 msgid "word processor"
-msgstr ""
+msgstr "Textverarbeitungssystem"
 
 msgid "work around"
-msgstr ""
+msgstr "Workaround"
 
 msgid "work group"
 msgstr "Arbeitsgruppe"
@@ -3463,14 +3367,13 @@ msgid "work station"
 msgstr "Arbeitsstation"
 
 msgid "wrap"
-msgstr ""
+msgstr "wickeln"
 
 msgid "yes"
 msgstr "ja"
 
-#, fuzzy
 msgid "zone"
-msgstr "eins"
+msgstr "Zone"
 
 # Oder auch: zoom. Ist das hier ein Verb oder ein Substantiv?
 msgid "zoom"

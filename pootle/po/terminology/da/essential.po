@@ -3,15 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-02-27 16:12+0200\n"
-"PO-Revision-Date: 2010-04-23 16:09+0200\n"
-"Last-Translator: Kim <hjortholm@gmail.com>\n"
+"PO-Revision-Date: 2011-11-19 19:10+0200\n"
+"Last-Translator: Anders <boegeloev@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.0-beta2\n"
+"X-Generator: Pootle 2.2.0-alpha1a\n"
+"X-POOTLE-MTIME: 1321722619.0\n"
 
 # Essential terminology list for general software localisation
 # License: GPL
@@ -32,7 +33,7 @@ msgid "accent"
 msgstr "accent"
 
 msgid "accept"
-msgstr "acceptér"
+msgstr "godkend"
 
 msgid "access"
 msgstr "adgang"
@@ -47,7 +48,7 @@ msgid "account"
 msgstr "konto"
 
 msgid "accuracy"
-msgstr "præcision"
+msgstr "nøjagtighed"
 
 msgid "acquire"
 msgstr "tilegne"
@@ -696,13 +697,11 @@ msgstr "kopi (navneord)"
 msgid "copy (verb)"
 msgstr "kopiere (verbum)"
 
-#, fuzzy
 msgid "copy left"
 msgstr "kopier venstre"
 
-#, fuzzy
 msgid "copy right"
-msgstr "Kopier højre"
+msgstr "ophavsret"
 
 msgid "correct"
 msgstr "korrekt"
@@ -876,7 +875,7 @@ msgid "detach"
 msgstr "frigør"
 
 msgid "detect"
-msgstr ""
+msgstr "opdage"
 
 msgid "develop"
 msgstr "udvikle"
@@ -1078,7 +1077,7 @@ msgid "entertainment"
 msgstr "underholdning"
 
 msgid "entry"
-msgstr ""
+msgstr "artikel"
 
 msgid "environment"
 msgstr "miljø"
@@ -1211,9 +1210,8 @@ msgid "flag"
 msgstr "marker"
 
 # most likely the same in danish - unless it means flash as in lightning
-#, fuzzy
 msgid "flash"
-msgstr "flash"
+msgstr "glimt"
 
 msgid "flat"
 msgstr "flad"
@@ -1261,9 +1259,8 @@ msgid "fragment"
 msgstr "fragment"
 
 # depends on context
-#, fuzzy
 msgid "frame"
-msgstr "Ramme"
+msgstr "ramme"
 
 msgid "frame set"
 msgstr "frame set"
@@ -1321,7 +1318,7 @@ msgid "gradient"
 msgstr "gradient"
 
 msgid "grain"
-msgstr ""
+msgstr "korn"
 
 msgid "graph"
 msgstr "graf"
@@ -1454,7 +1451,7 @@ msgid "index"
 msgstr "indeks"
 
 msgid "indice"
-msgstr ""
+msgstr "indice"
 
 msgid "infect"
 msgstr "inficéret"
@@ -1547,10 +1544,10 @@ msgid "iteration"
 msgstr "gennemgang"
 
 msgid "jag"
-msgstr ""
+msgstr "jag"
 
 msgid "jam"
-msgstr ""
+msgstr "jam"
 
 msgid "job"
 msgstr "job"
@@ -1663,7 +1660,7 @@ msgid "manage"
 msgstr "håndtér"
 
 msgid "management"
-msgstr ""
+msgstr "Administration"
 
 # same in danish
 msgid "manager"
@@ -1751,7 +1748,7 @@ msgid "navigation"
 msgstr "navigation"
 
 msgid "navigator"
-msgstr ""
+msgstr "Navigator"
 
 msgid "network"
 msgstr "netværk"
@@ -1867,13 +1864,13 @@ msgid "owner"
 msgstr "ejer"
 
 msgid "pack"
-msgstr ""
+msgstr "Pakke"
 
 msgid "package"
-msgstr ""
+msgstr "pakke"
 
 msgid "packet"
-msgstr ""
+msgstr "Pakke"
 
 msgid "padding"
 msgstr "fyld"
@@ -1900,7 +1897,7 @@ msgid "parameter"
 msgstr "parameter"
 
 msgid "parcel"
-msgstr ""
+msgstr "Pakke"
 
 msgid "parent"
 msgstr "forældrer"
@@ -1915,7 +1912,7 @@ msgid "partition"
 msgstr "opdeling"
 
 msgid "pass"
-msgstr ""
+msgstr "Gennemgang"
 
 msgid "password"
 msgstr "adgangskode"
@@ -1924,10 +1921,10 @@ msgid "paste"
 msgstr "indsæt"
 
 msgid "patch (noun)"
-msgstr ""
+msgstr "patch (noun)"
 
 msgid "patch (verb)"
-msgstr ""
+msgstr "patch (verb)"
 
 msgid "path"
 msgstr "sti"
@@ -1939,7 +1936,7 @@ msgid "pause"
 msgstr "pause"
 
 msgid "peripheral"
-msgstr ""
+msgstr "Tilkoblinger"
 
 msgid "permanent"
 msgstr "permanent"
@@ -1957,7 +1954,7 @@ msgid "picture"
 msgstr "billede"
 
 msgid "pipe"
-msgstr ""
+msgstr "pipe"
 
 msgid "pixel"
 msgstr "billedpunkt"
@@ -1969,25 +1966,25 @@ msgid "plain"
 msgstr "enkel"
 
 msgid "plot (verb)"
-msgstr ""
+msgstr "plot (verb)"
 
 msgid "plotter"
-msgstr ""
+msgstr "plotter"
 
 msgid "plugin"
 msgstr "udvidelsesmodul"
 
 msgid "pop up"
-msgstr ""
+msgstr "pop up"
 
 msgid "port"
-msgstr ""
+msgstr "port"
 
 msgid "position"
 msgstr "position"
 
 msgid "post"
-msgstr ""
+msgstr "indlæg"
 
 msgid "preferences"
 msgstr "indstillinger"
@@ -1999,7 +1996,7 @@ msgid "presentation"
 msgstr "præsentation"
 
 msgid "press"
-msgstr ""
+msgstr "Presse"
 
 msgid "prevent"
 msgstr "forhindre"
@@ -2056,10 +2053,10 @@ msgid "project"
 msgstr "projekt"
 
 msgid "prompt"
-msgstr ""
+msgstr "prompt"
 
 msgid "property"
-msgstr ""
+msgstr "property"
 
 msgid "proprietary"
 msgstr "proprietær"
@@ -2075,13 +2072,13 @@ msgid "protocol"
 msgstr "protokol"
 
 msgid "provide"
-msgstr ""
+msgstr "Tilbyd"
 
 msgid "provider"
-msgstr ""
+msgstr "Udbyder"
 
 msgid "proxy"
-msgstr ""
+msgstr "proxy"
 
 msgid "public"
 msgstr "offentlig"
@@ -2141,7 +2138,7 @@ msgid "raw"
 msgstr "rå"
 
 msgid "ray"
-msgstr ""
+msgstr "ray"
 
 msgid "read"
 msgstr "læse"
@@ -2171,10 +2168,10 @@ msgid "reconnect"
 msgstr "forbinde igen"
 
 msgid "record"
-msgstr ""
+msgstr "Registrer"
 
 msgid "record (verb)"
-msgstr ""
+msgstr "record (verb)"
 
 msgid "recover"
 msgstr "genskab"
@@ -2193,7 +2190,7 @@ msgid "redirect"
 msgstr "redirigere"
 
 msgid "redo"
-msgstr ""
+msgstr "gentag"
 
 msgid "reduce"
 msgstr "reducér"
@@ -2208,13 +2205,13 @@ msgid "reference"
 msgstr "reference"
 
 msgid "referer"
-msgstr ""
+msgstr "referer"
 
 msgid "referral"
-msgstr ""
+msgstr "referral"
 
 msgid "reflexive"
-msgstr ""
+msgstr "reflexive"
 
 msgid "refresh"
 msgstr "opdatér"
@@ -2223,7 +2220,7 @@ msgid "refuse"
 msgstr "nægtet"
 
 msgid "regenerate"
-msgstr ""
+msgstr "regenerate"
 
 msgid "register"
 msgstr "registrér"
@@ -2235,7 +2232,7 @@ msgid "registry"
 msgstr "register"
 
 msgid "regular"
-msgstr ""
+msgstr "almindelig"
 
 msgid "regulate"
 msgstr "regulér"
@@ -2253,7 +2250,7 @@ msgid "remind"
 msgstr "husk"
 
 msgid "remote"
-msgstr ""
+msgstr "remote"
 
 msgid "removable"
 msgstr "flytbar"
@@ -2265,7 +2262,7 @@ msgid "rename"
 msgstr "omdøb"
 
 msgid "render"
-msgstr ""
+msgstr "render"
 
 msgid "renew"
 msgstr "forny"
@@ -2280,10 +2277,10 @@ msgid "replace"
 msgstr "erstat"
 
 msgid "replicate"
-msgstr ""
+msgstr "Kopiér"
 
 msgid "replication"
-msgstr ""
+msgstr "replication"
 
 msgid "reply"
 msgstr "svar"
@@ -2292,7 +2289,7 @@ msgid "report"
 msgstr "rapport"
 
 msgid "repository"
-msgstr ""
+msgstr "softwarekilde"
 
 msgid "request"
 msgstr "forespørgsel"
@@ -2310,10 +2307,10 @@ msgid "resize"
 msgstr "skift størrelse"
 
 msgid "resolution"
-msgstr ""
+msgstr "Opløsning"
 
 msgid "resolver"
-msgstr ""
+msgstr "Løst"
 
 msgid "resource"
 msgstr "ressource"
@@ -2346,22 +2343,22 @@ msgid "retry"
 msgstr "prøv igen"
 
 msgid "return"
-msgstr ""
+msgstr "retur"
 
 msgid "reverse"
-msgstr ""
+msgstr "Vend om"
 
 msgid "revert"
 msgstr "forkast"
 
 msgid "revocation"
-msgstr ""
+msgstr "revocation"
 
 msgid "revoke"
 msgstr "forkast"
 
 msgid "root"
-msgstr ""
+msgstr "root"
 
 msgid "rotate"
 msgstr "rotér"
@@ -2391,10 +2388,10 @@ msgid "safe"
 msgstr "sikker"
 
 msgid "sample"
-msgstr ""
+msgstr "Eksempel"
 
 msgid "sans"
-msgstr ""
+msgstr "sans"
 
 msgid "save"
 msgstr "gem"
@@ -2403,7 +2400,7 @@ msgid "scalable"
 msgstr "skalérbar"
 
 msgid "scale"
-msgstr ""
+msgstr "skalér"
 
 msgid "scan"
 msgstr "scan"
@@ -2418,7 +2415,7 @@ msgid "scheme"
 msgstr "skema"
 
 msgid "scratch"
-msgstr ""
+msgstr "scratch"
 
 msgid "screen"
 msgstr "skærm"
@@ -2481,7 +2478,7 @@ msgid "sensor"
 msgstr "sensor"
 
 msgid "serif"
-msgstr ""
+msgstr "serif"
 
 msgid "server"
 msgstr "server"
@@ -2496,10 +2493,10 @@ msgid "settings"
 msgstr "indstillinger"
 
 msgid "setup"
-msgstr ""
+msgstr "Opsætning"
 
 msgid "shading"
-msgstr ""
+msgstr "Skygger"
 
 msgid "shadow"
 msgstr "skygge"
@@ -2529,16 +2526,16 @@ msgid "show"
 msgstr "vis"
 
 msgid "shrink"
-msgstr ""
+msgstr "Formindsk"
 
 msgid "shut down"
 msgstr "sluk"
 
 msgid "side bar"
-msgstr ""
+msgstr "Side_bjælke"
 
 msgid "sign"
-msgstr ""
+msgstr "Tegn"
 
 msgid "signal"
 msgstr "signal"
@@ -2547,28 +2544,28 @@ msgid "signature"
 msgstr "signatur"
 
 msgid "site"
-msgstr ""
+msgstr "site"
 
 msgid "size"
 msgstr "størrelse"
 
 msgid "skew"
-msgstr ""
+msgstr "Vrid"
 
 msgid "skip"
 msgstr "spring over"
 
 msgid "slave"
-msgstr ""
+msgstr "slave"
 
 msgid "sleep"
-msgstr ""
+msgstr "Sove"
 
 msgid "slide"
-msgstr ""
+msgstr "Dias"
 
 msgid "slot"
-msgstr ""
+msgstr "slot"
 
 msgid "smart"
 msgstr "smart"
@@ -2586,7 +2583,7 @@ msgid "software"
 msgstr "software"
 
 msgid "solid"
-msgstr ""
+msgstr "massiv"
 
 msgid "sort"
 msgstr "sortér"
@@ -2595,19 +2592,19 @@ msgid "source"
 msgstr "kilde"
 
 msgid "space"
-msgstr ""
+msgstr "mellemrum"
 
 msgid "spacing"
-msgstr ""
+msgstr "Afstand"
 
 msgid "spam"
 msgstr "spam"
 
 msgid "span"
-msgstr ""
+msgstr "Spænd"
 
 msgid "spawn"
-msgstr ""
+msgstr "spawn"
 
 msgid "specify"
 msgstr "specificér"
@@ -2616,16 +2613,16 @@ msgid "speed"
 msgstr "hastighed"
 
 msgid "spelling"
-msgstr ""
+msgstr "Stavning"
 
 msgid "splash"
-msgstr ""
+msgstr "splash"
 
 msgid "split"
 msgstr "opdel"
 
 msgid "spool"
-msgstr ""
+msgstr "spool"
 
 msgid "spread sheet"
 msgstr "regneark"
@@ -2661,13 +2658,13 @@ msgid "storage"
 msgstr "lager"
 
 msgid "store"
-msgstr ""
+msgstr "Gem"
 
 msgid "stream"
 msgstr "strøm"
 
 msgid "stretch"
-msgstr ""
+msgstr "Stræk"
 
 msgid "strict"
 msgstr "striks"
@@ -2676,28 +2673,28 @@ msgid "string"
 msgstr "streng"
 
 msgid "strip"
-msgstr ""
+msgstr "Fjern"
 
 msgid "stroke"
-msgstr ""
+msgstr "stroke"
 
 msgid "structure"
 msgstr "struktur"
 
 msgid "stub"
-msgstr ""
+msgstr "stub"
 
 msgid "style"
 msgstr "stil"
 
 msgid "sub directory"
-msgstr ""
+msgstr "Ny mappe"
 
 msgid "sub folder"
-msgstr ""
+msgstr "Ny mappe"
 
 msgid "submission"
-msgstr ""
+msgstr "Indsendelse"
 
 msgid "submit"
 msgstr "indsend"
@@ -2712,7 +2709,7 @@ msgid "subtract"
 msgstr "subtrahér"
 
 msgid "succeed"
-msgstr ""
+msgstr "gennemført"
 
 msgid "suggest"
 msgstr "foreslå"
@@ -2721,16 +2718,16 @@ msgid "suggestion"
 msgstr "foreslag"
 
 msgid "sum (noun)"
-msgstr ""
+msgstr "sum (noun)"
 
 msgid "sum (verb)"
-msgstr ""
+msgstr "sum (verb)"
 
 msgid "summary"
-msgstr ""
+msgstr "Opsummering"
 
 msgid "support"
-msgstr ""
+msgstr "support"
 
 msgid "surface"
 msgstr "overflade"
@@ -2742,10 +2739,10 @@ msgid "suspicious"
 msgstr "mistænkelig"
 
 msgid "swap"
-msgstr ""
+msgstr "Ombyt"
 
 msgid "switch"
-msgstr ""
+msgstr "skift"
 
 msgid "symbol"
 msgstr "symbol"
@@ -2778,7 +2775,7 @@ msgid "temporary"
 msgstr "midlertidig"
 
 msgid "terminal"
-msgstr ""
+msgstr "terminal"
 
 msgid "test"
 msgstr "test"
@@ -2796,19 +2793,19 @@ msgid "thread"
 msgstr "tråd"
 
 msgid "thumbnail"
-msgstr ""
+msgstr "Miniaturebillede"
 
 msgid "tick"
-msgstr ""
+msgstr "tick"
 
 msgid "tile"
-msgstr ""
+msgstr "tile"
 
 msgid "time"
-msgstr ""
+msgstr "tid"
 
 msgid "time out"
-msgstr ""
+msgstr "Tidsudløb"
 
 msgid "tip"
 msgstr "tip"
@@ -2817,10 +2814,10 @@ msgid "title"
 msgstr "titel"
 
 msgid "toggle"
-msgstr ""
+msgstr "toggle"
 
 msgid "token"
-msgstr ""
+msgstr "token"
 
 msgid "tool"
 msgstr "værktøj"
@@ -2838,7 +2835,7 @@ msgid "trace"
 msgstr "spore"
 
 msgid "track"
-msgstr ""
+msgstr "spor"
 
 msgid "traffic"
 msgstr "trafik"
@@ -2853,28 +2850,28 @@ msgid "transformation"
 msgstr "transformering"
 
 msgid "trap"
-msgstr ""
+msgstr "Fælde"
 
 msgid "trash"
 msgstr "papirkurv"
 
 msgid "trigger"
-msgstr ""
+msgstr "udløser"
 
 msgid "trouble shoot"
 msgstr "fejlfind"
 
 msgid "tune"
-msgstr ""
+msgstr "tune"
 
 msgid "tweak"
-msgstr ""
+msgstr "tweak"
 
 msgid "type (noun)"
-msgstr ""
+msgstr "type (noun)"
 
 msgid "type (verb)"
-msgstr ""
+msgstr "type (verb)"
 
 msgid "type face"
 msgstr "skrifttype"
@@ -2931,10 +2928,10 @@ msgid "upload"
 msgstr "indlæs"
 
 msgid "upper case"
-msgstr ""
+msgstr "upper case"
 
 msgid "usage"
-msgstr ""
+msgstr "Anvendelse"
 
 msgid "user"
 msgstr "bruger"
@@ -2943,7 +2940,7 @@ msgid "user name"
 msgstr "brugernavn"
 
 msgid "utility"
-msgstr ""
+msgstr "Værktøj"
 
 msgid "valid"
 msgstr "gyldig"
@@ -2964,7 +2961,7 @@ msgid "vector"
 msgstr "vektor"
 
 msgid "verbose"
-msgstr ""
+msgstr "Uddybende"
 
 msgid "verify"
 msgstr "verificér"
@@ -2997,7 +2994,7 @@ msgid "wallpaper"
 msgstr "baggrundsbillede"
 
 msgid "warn"
-msgstr ""
+msgstr "advar"
 
 msgid "web"
 msgstr "web"
@@ -3033,7 +3030,7 @@ msgid "word processor"
 msgstr "tekstbehandler"
 
 msgid "work around"
-msgstr ""
+msgstr "work around"
 
 msgid "work group"
 msgstr "arbejdsgruppe"

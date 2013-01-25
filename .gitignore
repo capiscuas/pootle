@@ -48,3 +48,6 @@ _site/
 # Build stuff
 dist/
 Pootle.egg-info/
+
+#po folder
+/pootle/po/

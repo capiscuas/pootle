@@ -1,1 +1,13 @@
 This is a TODO of what the Linguistic Team International needs for Pootle.
+
+-Add scripts used in the previous pootle 2.1
+
+- hacer los primeros commits para luego ir comentando, no subirlos todos ya hechos
+- bajar el repositorio 
+- anaydir la pestanya Files para que puedan actualizar updates
+- anayadir los list_users y create_report dentro de commands
+- anyadir crontab con los users inactivos(envia mail)
+- averiguar el Unknown Error (con proyectos en Ingles)
+
+- quitar los TOP Translators de abajo
+- filtros de las News

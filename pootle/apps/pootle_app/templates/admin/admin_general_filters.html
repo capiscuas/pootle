@@ -1,0 +1,23 @@
+{% extends "admin_profile_base.html" %}
+{% load i18n baseurl app_tags %}
+
+{% block title %}
+{{ block.super }} » {% trans "Filters" %}
+{% endblock %}
+
+{% block bodyclass %}adminfilters{% endblock %}
+{% block body_id %}adminfilters{% endblock %}
+
+{% block breadcrumb_content %}
+{{ block.super }}<li>{% trans "Filters" %}</li>
+{% endblock %}
+
+{% block section_description %}{% trans "Filters (change this description)" %}{% endblock %}
+
+{% block section_body %}
+{% show_active_tabmenu_css 'adminfilters' %}
+<style  TYPE="text/css">li.info{padding-left: 20px; !important; list-style:square !important;} </style>
+{{html|safe}}
+
+{% endblock %}
+

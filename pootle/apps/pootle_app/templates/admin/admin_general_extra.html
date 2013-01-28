@@ -1,0 +1,19 @@
+{% extends "admin_profile_base.html" %}
+{% load i18n baseurl app_tags%}
+
+{% block title %}{% trans "Extra" %} | {{ block.super }}{% endblock %}
+
+{% block body_id %}adminextrainfo{% endblock %}
+
+{% block breadcrumbs %}
+{{ block.super }}<li>{% trans "Extra" %}</li>
+{% endblock %}
+
+{% block section_description %}{% trans "Extra info (change this description)" %}{% endblock %}
+
+{% block section_body %}
+{% show_active_tabmenu_css 'adminextrainfo' %}
+<style  TYPE="text/css">li.info{padding-left: 20px; !important; list-style:square !important;} </style>
+{{html|safe}}
+
+{% endblock %}

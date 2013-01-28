@@ -55,7 +55,8 @@ def store(fn):
 
 @directory
 def download_zip(request, path_obj, **kwargs):
-    if check_permission('archive', request):
+    #LTI patch
+    if request.user.is_superuser or check_permission('archive', request):
         text = _('Download (.zip)')
         link = dispatch.download_zip(path_obj)
 
@@ -68,6 +69,7 @@ def download_zip(request, path_obj, **kwargs):
 
 @store
 def download_source(request, path_obj, **kwargs):
+  if request.user.is_superuser: #LTI patch
     href = None
     if path_obj.name.startswith("pootle-terminology"):
         text = _("Download XLIFF")
@@ -90,7 +92,7 @@ def download_source(request, path_obj, **kwargs):
 
 @store
 def download_xliff(request, path_obj):
-  if check_permission('administrate', request):
+  if request.user.is_superuser: #LTI patch
     if path_obj.translation_project.project.localfiletype == 'xlf':
         return
 
@@ -111,7 +113,7 @@ def upload_zip(request, path_obj, **kwargs):
     # if (check_permission('translate', request) or
     #     check_permission('suggest', request) or
     #     check_permission('overwrite', request)):
-    if check_permission('administrate', request):
+    if request.user.is_superuser:
         text = _('Upload')
         tooltip = _('Upload translation files or archives in .zip format')
         link = '#'

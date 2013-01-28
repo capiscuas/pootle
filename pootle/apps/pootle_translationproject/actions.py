@@ -90,6 +90,7 @@ def download_source(request, path_obj, **kwargs):
 
 @store
 def download_xliff(request, path_obj):
+  if check_permission('administrate', request):
     if path_obj.translation_project.project.localfiletype == 'xlf':
         return
 
@@ -106,9 +107,11 @@ def download_xliff(request, path_obj):
 
 
 def upload_zip(request, path_obj, **kwargs):
-    if (check_permission('translate', request) or
-        check_permission('suggest', request) or
-        check_permission('overwrite', request)):
+    #LTI patch
+    # if (check_permission('translate', request) or
+    #     check_permission('suggest', request) or
+    #     check_permission('overwrite', request)):
+    if check_permission('administrate', request):
         text = _('Upload')
         tooltip = _('Upload translation files or archives in .zip format')
         link = '#'

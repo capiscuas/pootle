@@ -55,8 +55,8 @@ def store(fn):
 
 @directory
 def download_zip(request, path_obj, **kwargs):
-    #LTI patch
-    if request.user.is_superuser or check_permission('archive', request):
+    if request.user.is_superuser: #LTI patch
+    #if check_permission('archive', request):
         text = _('Download (.zip)')
         link = dispatch.download_zip(path_obj)
 
@@ -109,11 +109,10 @@ def download_xliff(request, path_obj):
 
 
 def upload_zip(request, path_obj, **kwargs):
-    #LTI patch
     # if (check_permission('translate', request) or
     #     check_permission('suggest', request) or
     #     check_permission('overwrite', request)):
-    if request.user.is_superuser:
+    if request.user.is_superuser: #LTI patch
         text = _('Upload')
         tooltip = _('Upload translation files or archives in .zip format')
         link = '#'
@@ -129,6 +128,7 @@ def upload_zip(request, path_obj, **kwargs):
 
 @store
 def update_from_vcs(request, path_obj, **kwargs):
+  if request.user.is_superuser: #LTI patch
     if (path_obj.abs_real_path and check_permission('commit', request) and
         hasversioning(path_obj.abs_real_path)):
         link = dispatch.update(path_obj)
@@ -143,6 +143,7 @@ def update_from_vcs(request, path_obj, **kwargs):
 
 @store
 def commit_to_vcs(request, path_obj, **kwargs):
+  if request.user.is_superuser: #LTI patch
     if (path_obj.abs_real_path and check_permission('commit', request) and
         hasversioning(path_obj.abs_real_path)):
         link = dispatch.commit(path_obj)
@@ -157,6 +158,7 @@ def commit_to_vcs(request, path_obj, **kwargs):
 
 @directory
 def update_dir_from_vcs(request, path_obj, **kwargs):
+  if request.user.is_superuser: #LTI patch
     if (path_obj.get_real_path() and check_permission('commit', request) and
             hasversioning(path_obj.get_real_path())):
         link = dispatch.update_all(path_obj)
@@ -172,6 +174,7 @@ def update_dir_from_vcs(request, path_obj, **kwargs):
 
 @directory
 def commit_dir_to_vcs(request, path_obj, **kwargs):
+  if request.user.is_superuser: #LTI patch
     if (path_obj.get_real_path() and check_permission('commit', request) and
             hasversioning(path_obj.get_real_path())):
         link = dispatch.commit_all(path_obj)
@@ -186,6 +189,7 @@ def commit_dir_to_vcs(request, path_obj, **kwargs):
 
 
 def rescan_project_files(request, path_obj, **kwargs):
+  if request.user.is_superuser: #LTI patch
     if check_permission('administrate', request):
         tp = path_obj.translation_project
         link = reverse('tp.rescan', args=[tp.language.code, tp.project.code])
@@ -199,6 +203,7 @@ def rescan_project_files(request, path_obj, **kwargs):
 
 
 def update_against_templates(request, path_obj, **kwargs):
+  if request.user.is_superuser: #LTI patch
     if check_permission('administrate', request):
         tp = path_obj.translation_project
         link = reverse('tp.update_against_templates', args=[tp.language.code,
@@ -213,6 +218,7 @@ def update_against_templates(request, path_obj, **kwargs):
 
 
 def delete_path_obj(request, path_obj, **kwargs):
+  if request.user.is_superuser: #LTI patch
     if check_permission('administrate', request):
         tp = path_obj.translation_project
         link = reverse('tp.delete_path_obj', args=[tp.language.code,

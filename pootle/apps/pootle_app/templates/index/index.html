@@ -97,7 +97,11 @@
   </div>
 </div>
 
-{% include "top_contributers_table.html" %}
+<!-- LTI Patched: top_contributers template loaded only for admins -->
+{% if user.is_superuser%}
+  {% include "top_contributers_table.html" %}
+{% endif %}
+
 {% endblock postcontent %}
 
 {% block scripts_extra %}
@@ -111,4 +115,18 @@ $(function() {
 <script type="text/javascript" src="{{ ASSET_URL }}"></script>
 {% endassets %}
 {% endif %}
+
+<!-- Added the Google Analytics for the Linguistic Team -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20015204-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 {% endblock %}

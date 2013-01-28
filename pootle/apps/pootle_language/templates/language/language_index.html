@@ -67,7 +67,10 @@
 {% endblock content %}
 
 {% block postcontent %}
-{% include "top_contributers_table.html" %}
+<!-- LTI Patched: top_contributers template loaded only for admins -->
+{% if user.is_superuser%}
+  {% include "top_contributers_table.html" %}
+{% endif %}
 {% endblock postcontent %}
 
 {% block scripts_extra %}

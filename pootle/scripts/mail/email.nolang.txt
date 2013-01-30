@@ -1,0 +1,28 @@
+Welcome!
+
+You are receiving this email because you completed the registration for your new Pootle account.
+
+No Language selected:
+
+It appears that you have not yet selected any language for translation. As a result, the Pootle server is automatically sending this email to you in order to provide the info needed to complete your account selections.
+
+To complete these selections and provide yourself access to the translation controls within Pootle, please log into Pootle, 
+http://pootle.linguisticteam.org/accounts/login/
+
+click on the Settings tab near the top of the resulting page
+http://pootle.linguisticteam.org/accounts/edit/
+
+and add your selections to the Language, Projects and Alternate Language areas on the left. Multiple items can be selected by holding down the CTRL key while clicking on them. When you are finished, be sure to click on the Save button below leaving the page. Once your selections have been saved to the system, we will finally be able to set up your translation rights for those selections.
+
+The "Terminology" project is not yet translatable and should not be selected. Also, the "French Chapter" project is only there for members of the French Team while the English Proofreading project is specific to the English Proofreading Team and should not be selected unless you are an English proofreader. Finally, there is no need to select the English language or the Tutorial project in order to make use of our 'practice' area. The Tutorial project is open to everyone and does not require any rights to access.
+
+SEE ALSO:
+
+The Linguistic Team forum.
+http://forum.linguisticteam.org
+
+Best regards
+
+Linguistic Team International (LTI)
+
+--

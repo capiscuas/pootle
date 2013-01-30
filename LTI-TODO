@@ -1,13 +1,14 @@
-This is a TODO of what the Linguistic Team International needs for Pootle.
+This is a list of TODO's and CHANGES that the Linguistic Team International needs for http://pootle.linguisticteam.org/
 
--Add scripts used in the previous pootle 2.1
+TODO:
+-check the CSS length of the progress, ex here http://pootle.linguisticteam.org/af/designing_the_future/
+-remove some of the News filters
+-find out the 'Unknown error' from production
+- ADD the list_users y create_report inside the commands
+- Restore crontabs in production server
+- Apply the fuzzy strings patch http://bugs.locamotion.org/show_bug.cgi?id=2030
 
-- hacer los primeros commits para luego ir comentando, no subirlos todos ya hechos
-- bajar el repositorio 
-- anaydir la pestanya Files para que puedan actualizar updates
-- anayadir los list_users y create_report dentro de commands
-- anyadir crontab con los users inactivos(envia mail)
-- averiguar el Unknown Error (con proyectos en Ingles)
 
-- quitar los TOP Translators de abajo
-- filtros de las News
+FINISHED things:
+- Added the Extra tab in the administrator menu with some useful reports. 
+- Hide the 'Top Contributors' section for non-superadmins (competition is not a motivator in our team)

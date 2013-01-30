@@ -1,15 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-'''Author: Ivan Garcia <ivan@movimientozeitgeist.org> 
+'''Author: Ivan Garcia <capiscuas@gmail.com> 
    Author: Ray / Gman <gman@thezeitgeistmovement.com> 
 Copyright: (C) 2010 Linguistic Team International
 Permission is granted to redistribute this file under the GPLv3 or later'''
 
-
-
 css_path = '/html'
-
 
 import os
 import os.path
@@ -93,32 +90,15 @@ if __name__ == "__main__":
 
 
 
-    html_begin =  """<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-    <html>
-    <head>
-	    <title>Translators - The Linguistic Team International Translation Project</title>
-	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	    <link rel="stylesheet" type="text/css" href="%s/pootle.css">
-	    <link rel="shortcut icon" href="../../favicon.ico">
-    </head>
-
-    <body>
-	    <div id="banner">
-
-		    <h1>The Linguistic Team International Translation Project</h1>
-	    </div>
-
-	    <div class="side">
-		    <a href="/">Home</a>
-	    </div>
+    html_begin =  """
 
 	    <div id="content">
 		    <div class="contents">
     <p style="font-size: 0.8em; color: #555; text-align: right;">
-    Generated: %s UTC. Update once every 10 minutes</p>""" %(css_path,time_string)
+    Generated: %s UTC. Update once every 10 minutes</p>""" %(time_string)
 
     generated_time_html = """<p>Generated: %s UTC. Update once every 10 minutes</p>""" %(time_string)
-    contact_link = 'http://pootle.linguisticteam.org/contact/'
+    contact_link = '/contact/'
 
     html_members_not_listed_text = """<p 
     style="font-size: 0.9em; color: #555; text-align: right;">Members not listed on this page still need to configure their profiles.
@@ -128,7 +108,7 @@ if __name__ == "__main__":
     """ %(contact_link)
 
 
-    html_end = """<p style="text-align: center;"><b>Thank You!</b></p>
+    html_end = """
 		    </div>
 	    </div>
     </body>
@@ -314,7 +294,7 @@ The email addresses provided below are confidential and must not be shared witho
 	  username = permission.profile.user.username
 	  original_en_proofreaders.append(username.lower())
 
-    output.write( """<h3 class="title">Proofreaders of english original texts (<font style="color: red;">%s</font>):</h3>
+    output.write( """<br><h3 class="title">Proofreaders of english original texts (<font style="color: red;">%s</font>):</h3>
 			    <div class="info"><p>""" %len(original_en_proofreaders))
 
     original_en_proofreaders.sort()
@@ -325,7 +305,7 @@ The email addresses provided below are confidential and must not be shared witho
 
     ###4. Translators (separated by language)
 
-    output.write( """<h3 class="title">Assigned translators (<font style="color: red;">%s</font>):</h3>
+    output.write( """<br><h3 class="title">Assigned translators (<font style="color: red;">%s</font>):</h3>
 			    <div class="info"><p><table class="translators-details">""" %len(assigned_usernames))
 
     lnames = language_names.keys()

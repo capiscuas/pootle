@@ -1,0 +1,14 @@
+{% extends "about/base.html" %}
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block title %}{% trans "User Permissions" %} | {{ block.super }}{% endblock %}
+
+{% block breadcrumbs %}
+{{ block.super }}<li>{% trans "User Permissions" %}</li>
+{% endblock %}
+
+{% block content %}
+ {{ HtmlContent|safe }}
+{% endblock content%}

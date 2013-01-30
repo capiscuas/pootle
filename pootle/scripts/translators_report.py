@@ -95,9 +95,9 @@ if __name__ == "__main__":
 	    <div id="content">
 		    <div class="contents">
     <p style="font-size: 0.8em; color: #555; text-align: right;">
-    Generated: %s UTC. Update once every 10 minutes</p>""" %(time_string)
+    Generated: %s UTC. Update once every 30 minutes</p>""" %(time_string)
 
-    generated_time_html = """<p>Generated: %s UTC. Update once every 10 minutes</p>""" %(time_string)
+    generated_time_html = """<p>Generated: %s UTC. Update once every 30 minutes</p>""" %(time_string)
     contact_link = '/contact/'
 
     html_members_not_listed_text = """<p 

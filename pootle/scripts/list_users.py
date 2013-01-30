@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 # coding: utf-8
 
-'''Author: Ivan Garcia <ivan@movimientozeitgeist.org> 
+'''Author: Ivan Garcia <capiscuas@gmail.com> 
    Author: Ray / Gman <gman@thezeitgeistmovement.com> 
-Copyright: (C) 2010 The Zeitgeist Movement
+Copyright: (C) 2012 The Zeitgeist Movement
 Permission is granted to redistribute this file under the GPLv3 or later'''
 
 # try:
@@ -16,16 +16,10 @@ import os
 import codecs
 import os.path
 
+from pootle import settings, syspath_override
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'pootle.settings'
 import sys
-# sys.path.insert(0,"/home/pootle/pootle2")
-#sys.path.insert(0,"/var/www/vhosts/pootle.linguisticteam.org/src")
-# sys.path.append("/home/pootle/pootle2/Django/")
-#sys.path.append("/var/www/vhosts/pootle.linguisticteam.org/src/pootle/apps")
-# sys.path.append("/home/pootle/pootle2/Pootle/external_apps/")
-#print sys.path
-
-#os.environ['DJANGO_SETTINGS_MODULE'] = 'pootle.settings'
-
 #from django.db import transaction
 
 #from django.contrib.auth.models import User
@@ -35,8 +29,8 @@ from pootle_project.models import Project
 from pootle_profile.models import PootleProfile
 
 from pootle_misc.siteconfig import load_site_config
-#from pootle.legacy.jToolkit import prefs
 
+#from pootle.legacy.jToolkit import prefs
 
 import types
 import logging

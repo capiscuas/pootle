@@ -6,35 +6,25 @@
 Copyright: (C) 2010 Linguistic Team International
 Permission is granted to redistribute this file under the GPLv3 or later'''
 
-#permissions.html q la casilla para nuevas.
-#poner el numero de idiomas.
 
-from pootle.tools.pootlelinks import get_username_link,get_username_mailto_link,get_project_stats_link,get_project_admin_link,get_language_admin_link,get_projectlanguage_admin_link
-
-try:
-    import syspath_override
-except ImportError:
-    pass
-
-import sys
-
-# sys.path.insert(0,"/home/pootle/pootle2")
-# sys.path.insert(1,'/home/pootle/pootle2/Pootle/local_apps')
-# sys.path.insert(1,'/home/pootle/pootle2/Pootle/external_apps')
-# sys.path.append("/home/pootle/pootle2/Django")
-# sys.path.append("/home/pootle/usr/lib/python2.6/site-packages/")
 
 css_path = '/html'
 
 
 import os
 import os.path
+import sys
+import types
+import logging
+import codecs
+import traceback
+from optparse import OptionParser
+from time import gmtime, strftime
+
+from pootle import settings, syspath_override
 os.environ['DJANGO_SETTINGS_MODULE'] = 'pootle.settings'
 
 #from django.core.management import execute_manager
-from django.db import transaction
-from pootle_misc.siteconfig import load_site_config
-# from pootle.legacy.jToolkit import prefs
 
 from django.contrib.auth.models import User
 from pootle_project.models import Project
@@ -44,19 +34,13 @@ from pootle_app.models.permissions import check_profile_permission,get_pootle_pe
 
 from pootle_profile.models import PootleProfile
 
-import types
-import logging
-
-from optparse import OptionParser
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 
-import sys,codecs
+from pootle.scripts.pootlelinks import get_username_link,get_username_mailto_link,get_project_stats_link,get_project_admin_link,get_language_admin_link,get_projectlanguage_admin_link
+from pootle.scripts import list_users
 
-from pootle.tools import filter_users
 
-from time import gmtime, strftime
-import traceback
 time_string = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
 #translations_folder = '/home/pootle/TRANSLATIONS'
@@ -277,10 +261,10 @@ The email addresses provided below are confidential and must not be shared witho
 
     #2. Members Unable To Be Assigned (display horizontally)
     output.write( """<h3 class="title">Members Unable To Be Assigned:  </h3><div class="info"><p>""")
-    no_project_no_language = filter_users.get_no_project_no_language_users()
-    no_project = filter_users.get_no_project_users()
-    no_language = filter_users.get_no_language_users()
-    no_translatable = filter_users.get_users_no_translatable_projects()
+    no_project_no_language = list_users.get_no_project_no_language_users()
+    no_project = list_users.get_no_project_users()
+    no_language = list_users.get_no_language_users()
+    no_translatable = list_users.get_users_no_translatable_projects()
 
     if len(no_language):
       output.write('<b>No Language Selected: (<font style="color: red;">%s</font>) </b><br>' %len(no_language))

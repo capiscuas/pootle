@@ -81,10 +81,8 @@ def main():
       script_num = args[0]
       if script_num == '0':
           #Filter 0: Get the user with the specified username
-          print options.username
           users = User.objects.filter(username=options.username)
-          print users
-          print User.objects.filter(username='capiscuas')
+
       elif script_num == '1':
           #Filter 1: Users who have not yet activated
           users = get_inactive_users()

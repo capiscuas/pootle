@@ -41,10 +41,10 @@ from pootle.scripts.pootlelinks import get_username_link,get_username_mailto_lin
 
 @util.user_is_admin
 def view(request):
-  html = """<ul><li><a href='/admin/extra/users-preferences.html'>User Preferences</a></li>
-           <li><a href='/admin/extra/users-permissions.html'>Users waiting for permissions approval</a></li>
-           <li><a href='/admin/extra/users-waiting-removal-permissions.html'>Users waiting for permissions removal</a></li>
-           <li><a href='/admin/extra/translation-projects-completed.html'>Projects 100% completed</a></li>
+  html = """<ul><li><a href='/admin/extra/member_preferences.html'>Member Preferences</a></li>
+           <li><a href='/admin/extra/member_waiting_status_approval.html'>Members waiting for status approval (wait 2min to load)</a></li>
+           <li><a href='/admin/extra/member_waiting_status_removal.html'>Members waiting for status removal</a></li>
+           <li><a href='/admin/extra/translation_projects_completed.html'>Projects 100% completed</a></li>
            </ul>"""
 
   template_vars = {
@@ -55,14 +55,14 @@ def view(request):
 
 
 @util.user_is_admin
-def usersPermissions(request):
+def memberWaitingForStatusApproval(request):
   template_vars = {
     'html': file('/home/pootle/private/translators.admin.html').read(),
     }
   return render_to_response("admin/admin_general_extra.html", template_vars, context_instance=RequestContext(request))
 
 @util.user_is_admin
-def usersPreferencesView(request):
+def memberPreferencesView(request):
     #Dump of the user preferences and details in a html file (for admin)
     html = u'<b>USERS PREFERENCES</b>:<ul>'
     for user in User.objects.all():
@@ -92,7 +92,7 @@ def usersPreferencesView(request):
     return render_to_response("admin/admin_general_extra.html", template_vars, context_instance=RequestContext(request))
 
 @util.user_is_admin
-def usersWaitingForRemovalPermissions(request):
+def memberWaitingForStatusRemoval(request):
     html = u'<h3 class="title">Users waiting for permissions removal</h3><div class="info"><p><ul>'
   
     #find those users that deleted some preferences projects or langs with already assigned permissions

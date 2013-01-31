@@ -35,10 +35,11 @@ urlpatterns = patterns('pootle_app.views.admin',
     #Added for the linguistic team customizations
     (r'^/filters.html$', 'filterusers.view'),
     (r'^/extra.html$', 'adminextra.view'),
-    (r'^/extra/users-preferences.html$', 'adminextra.usersPreferencesView'),
-    (r'^/extra/users-permissions.html$', 'adminextra.usersPermissions'),
-    (r'^/extra/translation-projects-completed.html$', 'adminextra.translationProjectsCompleted'),
-    (r'^/extra/users-waiting-removal-permissions.html$', 'adminextra.usersWaitingForRemovalPermissions'),
+    (r'^/extra/member_preferences.html$', 'adminextra.memberPreferencesView'),
+    (r'^/extra/member_waiting_status_approval.html$', 'adminextra.memberWaitingForStatusApproval'),
+        (r'^/extra/member_waiting_status_removal.html$', 'adminextra.memberWaitingForStatusRemoval'),
+    (r'^/extra/translation_projects_completed.html$', 'adminextra.translationProjectsCompleted'),
+
 
     (r'^/stats/more/?$', 'dashboard.server_stats_more'),
     (r'^/?$', 'dashboard.view'),

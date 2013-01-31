@@ -40,8 +40,6 @@ from pootle.scripts import list_users
 
 time_string = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-#translations_folder = '/home/pootle/TRANSLATIONS'
-
 if len(sys.argv) == 2 and sys.argv[1] == 'email':
     EMAIL_COORDS = True
 else:
@@ -59,45 +57,41 @@ def get_coordinators_language(lang_code):
   lang = Language.objects.get(code=lang_code)
   print lang_code
   for userprofile in lang.user_languages.all():
-	user = userprofile.user
-	d = Directory.objects.get(pootle_path='/%s/' %(lang_code))
-	if check_profile_permission(userprofile,'administrate',d):
-	    if not user.is_superuser:
-		coords.append(user)
-		
+      user = userprofile.user
+      d = Directory.objects.get(pootle_path='/%s/' %(lang_code))
+      if check_profile_permission(userprofile,'administrate',d):
+          if not user.is_superuser:
+            coords.append(user)
+            
   return coords
+
+def add_unassigned_permissions(assigned_languages,lang,user,proj):
+          username = user.username
+          email = user.email
+          proj_code = proj.code
+          lang_code = lang.code
+          if assigned_languages[lang.code].has_key(username):
+                assigned_languages[lang.code][username][1].append('%s'  %(proj_code))
+          else:
+                assigned_languages[lang.code][username] = [email,['%s'  %(proj_code)]]
+
 
 if __name__ == "__main__":
 
     for lang in Language.objects.all(): #range(1,Language.objects.count()+1):
-	#lang = Language.objects.get(id=i)
-    #for lang in Language.objects.all():
       if lang.code != 'templates':
-	language_names[lang.name] = lang.code
-	assigned_languages[lang.code] = {}
-      
-    def add_unassigned_permissions(assigned_languages,lang,user,proj):
-	    #print len(assigned_languages)
-	    #print username
-	    username = user.username
-	    email = user.email
-	    proj_code = proj.code
-	    lang_code = lang.code
-	    if assigned_languages[lang.code].has_key(username):
-		    assigned_languages[lang.code][username][1].append('%s'  %(proj_code))
-	    else:
-		    assigned_languages[lang.code][username] = [email,['%s'  %(proj_code)]]
-
-
+          language_names[lang.name] = lang.code
+          assigned_languages[lang.code] = {}
+    
 
     html_begin =  """
 
-	    <div id="content">
-		    <div class="contents">
+          <div id="content">
+                <div class="contents">
     <p style="font-size: 0.8em; color: #555; text-align: right;">
-    Generated: %s UTC. Update once every 30 minutes</p>""" %(time_string)
+    Generated: %s UTC. Update once every 8 hours</p>""" %(time_string)
 
-    generated_time_html = """<p>Generated: %s UTC. Update once every 30 minutes</p>""" %(time_string)
+    generated_time_html = """<p>Generated: %s UTC. Update once every 8 hours</p>""" %(time_string)
     contact_link = '/contact/'
 
     html_members_not_listed_text = """<p 
@@ -109,8 +103,8 @@ if __name__ == "__main__":
 
 
     html_end = """
-		    </div>
-	    </div>
+                </div>
+          </div>
     </body>
     </html>
     """
@@ -119,37 +113,37 @@ if __name__ == "__main__":
     print 'Start users loop'
     print strftime("%Y-%m-%d %H:%M:%S", gmtime())
     for user in User.objects.all():
-	username = user.username
-	if not user.is_superuser:
-	    #print username
-	    userprofile = user.pootleprofile
-	    for proj in userprofile.projects.all():
-	      if proj.code != 'test' and  proj.code != 'pootle' and proj.code != 'terminology': #We exclude those projects
-		for lang in userprofile.languages.all():
-		    if lang.code == 'templates':
-			    continue
-		    if (proj.code != 'english_proofreading' and lang.code == 'en'):
-			    continue
-		    if(proj.code == 'english_proofreading' and lang.code != 'en'):
-			    continue
-		    
-		    #print '/%s/%s/' %(lang.code,proj.code)
-		    try:
-			d = Directory.objects.get(pootle_path='/%s/%s/' %(lang.code,proj.code))
-			#print 'Existe','/%s/%s/' %(lang.code,proj.code)
-			user_permissions = get_permissions_by_username(username,d)
-			if check_profile_permission(userprofile,'suggest',d) or user_permissions is not None and 'view' in user_permissions:
-				  if not assigned_users.has_key(lang.code):
-				      assigned_users[lang.code] = set()
-				  assigned_users[lang.code].add(username.lower())
-				  assigned_usernames.add(username)
-			else:
-			    add_unassigned_permissions(assigned_languages,lang,user,proj)
-				
-		    except:
-			print 'exception','/%s/%s/' %(lang.code,proj.code)
-			traceback.print_exc()
-			#add_unassigned_permissions(assigned_languages,lang,user,proj)
+      username = user.username
+      if not user.is_superuser:
+          #print username
+          userprofile = user.pootleprofile
+          for proj in userprofile.projects.all():
+            if proj.code != 'test' and  proj.code != 'pootle' and proj.code != 'terminology': #We exclude those projects
+              for lang in userprofile.languages.all():
+                if lang.code == 'templates':
+                      continue
+                if (proj.code != 'english_proofreading' and lang.code == 'en'):
+                      continue
+                if(proj.code == 'english_proofreading' and lang.code != 'en'):
+                      continue
+                
+                #print '/%s/%s/' %(lang.code,proj.code)
+                try:
+                  d = Directory.objects.get(pootle_path='/%s/%s/' %(lang.code,proj.code))
+                  #print 'Existe','/%s/%s/' %(lang.code,proj.code)
+                  user_permissions = get_permissions_by_username(username,d)
+                  if check_profile_permission(userprofile,'suggest',d) or user_permissions is not None and 'view' in user_permissions:
+                          if not assigned_users.has_key(lang.code):
+                              assigned_users[lang.code] = set()
+                          assigned_users[lang.code].add(username.lower())
+                          assigned_usernames.add(username)
+                  else:
+                      add_unassigned_permissions(assigned_languages,lang,user,proj)
+                        
+                except:
+                  print 'exception','/%s/%s/' %(lang.code,proj.code)
+                  traceback.print_exc()
+                  #add_unassigned_permissions(assigned_languages,lang,user,proj)
 
 
     print 'Stop users loop'
@@ -177,61 +171,61 @@ if __name__ == "__main__":
 
     empty = True
     for language in lnames:
-	lang_code = language_names[language]
-	email_content = u''
-	
-	if len(assigned_languages[lang_code]):
-	    empty = False
-	    output.write('<li class="info">%s : '% language)
-	    output_admin.write('<li class="info">%s<ul>'% language)
-	    usernames = assigned_languages[lang_code].keys()
-	    email_content += """<html><body>
+      lang_code = language_names[language]
+      email_content = u''
+      
+      if len(assigned_languages[lang_code]):
+          empty = False
+          output.write('<li class="info">%s : '% language)
+          output_admin.write('<li class="info">%s<ul>'% language)
+          usernames = assigned_languages[lang_code].keys()
+          email_content += """<html><body>
 This is an auto-generated email from the LTI Pootle server.  Any replies to it will be directed to the Pootle admin.<br><br>
 The following members are now waiting for project permissions in Pootle. 
 The email addresses provided below are confidential and must not be shared without the person's advanced consent.
 <br><br><ul>"""
-	    usernames.sort()
-	    for username in usernames:
-		output.write('%s, ' % get_username_link(username))
-		#email = User.objects.get(username=username).email
-		#email = 'test'
-		
-		[email,projects] = assigned_languages[lang_code][username]
-		email_content += '<li class="info">%s: <ul>' % get_username_mailto_link(username,email)
-		output_admin.write('<li class="info">%s: <ul>' % get_username_mailto_link(username,email))
-		for project in projects:
-		      email_content += '<li class="info">%s </li>' %(get_project_admin_link(lang_code,project))
-		      output_admin.write('<li class="info">%s </li>' %(get_project_admin_link(lang_code,project)))
-		      
-		email_content += '</ul></li>'
-		output_admin.write( '</ul></li>')
-		#for username,projects in assigned_languages[lang_code].items():
-		    
-	    output.write('</li>')
-	    email_content += '</ul></body></html>'
-	    output_admin.write( '</ul></li>')
-	    
-	    
-	    if EMAIL_COORDS:
-		#Find out the lang coordinators email_text
-		coords = get_coordinators_language(lang_code)
-		if coords:
-		  coords_email = [coord.email for coord in coords]
-		else:
-		  coords_email = ['pootle-admin@thezeitgeistmovement.com']
-		
-		email_subject = u"Pootle: %s - Members are waiting for project permissions." %language
-		print 'Sending mail language',language,' to ',coords_email
-		# create the email, and attach the HTML version as well.
-		msg = EmailMultiAlternatives(email_subject, '', 'pootle-admin@thezeitgeistmovement.com', coords_email)
-		msg.attach_alternative(email_content, "text/html")
-		msg.send()
+          usernames.sort()
+          for username in usernames:
+            output.write('%s, ' % get_username_link(username))
+            #email = User.objects.get(username=username).email
+            #email = 'test'
+            
+            [email,projects] = assigned_languages[lang_code][username]
+            email_content += '<li class="info">%s: <ul>' % get_username_mailto_link(username,email)
+            output_admin.write('<li class="info">%s: <ul>' % get_username_mailto_link(username,email))
+            for project in projects:
+                  email_content += '<li class="info">%s </li>' %(get_project_admin_link(lang_code,project))
+                  output_admin.write('<li class="info">%s </li>' %(get_project_admin_link(lang_code,project)))
+                  
+            email_content += '</ul></li>'
+            output_admin.write( '</ul></li>')
+            #for username,projects in assigned_languages[lang_code].items():
+                
+          output.write('</li>')
+          email_content += '</ul></body></html>'
+          output_admin.write( '</ul></li>')
+          
+          
+          if EMAIL_COORDS:
+            #Find out the lang coordinators email_text
+            coords = get_coordinators_language(lang_code)
+            if coords:
+              coords_email = [coord.email for coord in coords]
+            else:
+              coords_email = ['pootle-admin@thezeitgeistmovement.com']
+            
+            email_subject = u"Pootle: %s - Members are waiting for project permissions." %language
+            print 'Sending mail language',language,' to ',coords_email
+            # create the email, and attach the HTML version as well.
+            msg = EmailMultiAlternatives(email_subject, '', 'pootle-admin@thezeitgeistmovement.com', coords_email)
+            msg.attach_alternative(email_content, "text/html")
+            msg.send()
 
-		
+            
 
     if empty:
-      output.write('<li class="info">All translators are currently assigned.</li>')
-      output_admin.write( '<li class="info">All translators are currently assigned.</li>')
+      output.write('<li class="info">All members are currently assigned.</li>')
+      output_admin.write( '<li class="info">All members are currently assigned.</li>')
       
     output.write( '</ul></div><br>')
     output_admin.write( '</ul></div><br>')
@@ -251,15 +245,15 @@ The email addresses provided below are confidential and must not be shared witho
       usernames = [user.username.lower() for user in no_language]
       usernames.sort()
       for user in usernames:
-	  output.write("%s, " % get_username_link(user))
+        output.write("%s, " % get_username_link(user))
       output.write('<br><br>')
-	  
+        
     if len(no_project):
       output.write('<b>No Projects Selected:  (<font style="color: red;">%s</font>) </b><br>' %len(no_project))
       usernames = [user.username.lower() for user in no_project]
       usernames.sort()
       for user in usernames:
-	  output.write("%s, " % get_username_link(user))
+        output.write("%s, " % get_username_link(user))
       output.write('<br><br>')
 
     if len(no_project_no_language):
@@ -267,18 +261,17 @@ The email addresses provided below are confidential and must not be shared witho
       usernames = [user.username.lower() for user in no_project_no_language]
       usernames.sort()
       for user in usernames:
-	  output.write("%s, " % get_username_link(user))
+        output.write("%s, " % get_username_link(user))
       output.write('<br><br>')
-	  
+        
     if len(no_translatable):
       output.write('<b>Non-translatable Selected: (<font style="color: red;">%s</font>) </b><br>' %len(no_translatable))
       usernames = [user.username.lower() for user in no_translatable]
       usernames.sort()
       for user in usernames:
-	  output.write("%s, " % get_username_link(user))
+        output.write("%s, " % get_username_link(user))
 
     output.write( """</p></div>""")
-
 
     print 'Filters stop'
     print strftime("%Y-%m-%d %H:%M:%S", gmtime())
@@ -290,42 +283,42 @@ The email addresses provided below are confidential and must not be shared witho
     eng_directory = Directory.objects.get(pootle_path='/en/')
     permissions = eng_directory.permission_sets.all()
     for permission in permissions:
-	if get_pootle_permission('translate') in permission.positive_permissions.all():
-	  username = permission.profile.user.username
-	  original_en_proofreaders.append(username.lower())
+      if get_pootle_permission('translate') in permission.positive_permissions.all():
+        username = permission.profile.user.username
+        original_en_proofreaders.append(username.lower())
 
     output.write( """<br><h3 class="title">Proofreaders of english original texts (<font style="color: red;">%s</font>):</h3>
-			    <div class="info"><p>""" %len(original_en_proofreaders))
+                      <div class="info"><p>""" %len(original_en_proofreaders))
 
     original_en_proofreaders.sort()
     for username in original_en_proofreaders:
-	    output.write('%s, '%  get_username_link(username))
+          output.write('%s, '%  get_username_link(username))
 
     output.write( """</p></div>""")
 
     ###4. Translators (separated by language)
 
-    output.write( """<br><h3 class="title">Assigned translators (<font style="color: red;">%s</font>):</h3>
-			    <div class="info"><p><table class="translators-details">""" %len(assigned_usernames))
+    output.write( """<br><h3 class="title">Assigned members (<font style="color: red;">%s</font>):</h3>
+                      <div class="info"><p><table class="translators-details">""" %len(assigned_usernames))
 
     lnames = language_names.keys()
     lnames.sort()
 
     for language in lnames:
-	lang_code = language_names[language]
-	if lang_code != 'templates' and lang_code != 'en':
-	      total_lang_users = 0
-	      total_lang_users_str = ''
-	      if assigned_users.has_key(lang_code):
-		    total_lang_users = len(assigned_users[lang_code])
-		    total_lang_users_str = '(%s)'% total_lang_users
-	      output.write( '<tr><td>%s</td><td><b><a href="/%s/">%s</a></b> %s</td>'%(language,lang_code,lang_code,total_lang_users_str))
-	      if total_lang_users: #If there are some users, show them
-		  output.write( '<td>')
-		  for username in sorted(assigned_users[lang_code]):
-		    output.write('%s, '%  get_username_link(username))
-		  output.write( '</td>')
-	      output.write( '</tr>')
+      lang_code = language_names[language]
+      if lang_code != 'templates' and lang_code != 'en':
+            total_lang_users = 0
+            total_lang_users_str = ''
+            if assigned_users.has_key(lang_code):
+                total_lang_users = len(assigned_users[lang_code])
+                total_lang_users_str = '(%s)'% total_lang_users
+            output.write( '<tr><td>%s</td><td><b><a href="/%s/">%s</a></b> %s</td>'%(language,lang_code,lang_code,total_lang_users_str))
+            if total_lang_users: #If there are some users, show them
+              output.write( '<td>')
+              for username in sorted(assigned_users[lang_code]):
+                output.write('%s, '%  get_username_link(username))
+              output.write( '</td>')
+            output.write( '</tr>')
 
     output.write( """</table></p></div>""")
 

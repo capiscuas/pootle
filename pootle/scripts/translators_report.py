@@ -55,7 +55,7 @@ language_names = {}
 def get_coordinators_language(lang_code):
   coords = []
   lang = Language.objects.get(code=lang_code)
-  print lang_code
+  #print lang_code
   for userprofile in lang.user_languages.all():
       user = userprofile.user
       d = Directory.objects.get(pootle_path='/%s/' %(lang_code))
@@ -85,9 +85,6 @@ if __name__ == "__main__":
     
 
     html_begin =  """
-
-          <div id="content">
-                <div class="contents">
     <p style="font-size: 0.8em; color: #555; text-align: right;">
     Generated: %s UTC. Update once every 8 hours</p>""" %(time_string)
 
@@ -103,10 +100,7 @@ if __name__ == "__main__":
 
 
     html_end = """
-                </div>
-          </div>
-    </body>
-    </html>
+            
     """
 
 

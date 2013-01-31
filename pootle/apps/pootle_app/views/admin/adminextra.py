@@ -19,12 +19,6 @@
 # along with translate; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-#added (r'^/filters.html$', 'filterusers.view'), to /home/pootle/pootle2/Pootle/local_apps/pootle_app/views/admin/urls.py
-#added     <a href='{{ "/admin/filters.html"|l }}' class="adminusers" title="{% trans 'Filter users' %}">{% trans "Filters" %}</a>
-#to /home/pootle/pootle2/Pootle/templates/admin_profile_menu.html
-
-
-import locale
 
 from django.http import HttpResponse
 from django.utils.translation import ugettext as _
@@ -42,6 +36,7 @@ from pootle.scripts.translators_report import get_html_members_waiting_status_ap
 
 @util.user_is_admin
 def view(request):
+
   html = """<ul><li><a href='/admin/extra/member_preferences.html'>Member Preferences</a></li>
            <li><a href='/admin/extra/member_waiting_status_approval.html'>Members waiting for status approval (wait 2min to load)</a></li>
            <li><a href='/admin/extra/member_waiting_status_removal.html'>Members waiting for status removal</a></li>

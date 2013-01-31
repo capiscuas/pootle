@@ -38,5 +38,5 @@ def view(request):
     data = {
     'HtmlContent':HtmlContent
     }
-    return render_to_response('about/userpermissions.html', data,
+    return render_to_response('about/memberstatus.html', data,
                               context_instance=RequestContext(request))

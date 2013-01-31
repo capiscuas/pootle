@@ -38,7 +38,7 @@ from pootle.scripts.pootlelinks import get_username_link,get_username_mailto_lin
 from pootle.scripts import list_users
 
 
-time_string = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+
 
 if len(sys.argv) == 2 and sys.argv[1] == 'email':
     EMAIL_COORDS = True
@@ -75,34 +75,14 @@ def add_unassigned_permissions(assigned_languages,lang,user,proj):
           else:
                 assigned_languages[lang.code][username] = [email,['%s'  %(proj_code)]]
 
-
-if __name__ == "__main__":
+def get_html_members_waiting_status_approval(EMAIL_COORDS):
+    output_html = ''
+    output_admin_html = ''
 
     for lang in Language.objects.all(): #range(1,Language.objects.count()+1):
-      if lang.code != 'templates':
-          language_names[lang.name] = lang.code
-          assigned_languages[lang.code] = {}
-    
-
-    html_begin =  """
-    <p style="font-size: 0.8em; color: #555; text-align: right;">
-    Generated: %s UTC. Update once every 8 hours</p>""" %(time_string)
-
-    generated_time_html = """<p>Generated: %s UTC. Update once every 8 hours</p>""" %(time_string)
-    contact_link = '/contact/'
-
-    html_members_not_listed_text = """<p 
-    style="font-size: 0.9em; color: #555; text-align: right;">Members not listed on this page still need to configure their profiles.
-    <br>If you did not receive the activation email within 30 minutes of your visit to the Registration page,
-    <br>or have problems with logging in after following the activation email instructions,
-    <br>please <a href="%s">e-mail the Pootle admin</a> with a full description of the issue.</p>
-    """ %(contact_link)
-
-
-    html_end = """
-            
-    """
-
+        if lang.code != 'templates':
+              language_names[lang.name] = lang.code
+              assigned_languages[lang.code] = {}
 
     print 'Start users loop'
     print strftime("%Y-%m-%d %H:%M:%S", gmtime())
@@ -139,23 +119,16 @@ if __name__ == "__main__":
                   traceback.print_exc()
                   #add_unassigned_permissions(assigned_languages,lang,user,proj)
 
-
     print 'Stop users loop'
     print strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-    output_admin=codecs.open('/home/pootle/private/translators.admin.html',  'w',  "utf-8")
-    output=codecs.open('/home/pootle/HTML/translators.html',  'w',  "utf-8")
-
-
-
-    output.write(html_begin)
-    css_fix = """<style  TYPE="text/css">li.info{padding-left: 20px; !important; list-style:square !important;} </style>"""
-    output_admin.write(generated_time_html)
-    output_admin.write(css_fix)
     
-    output.write(html_members_not_listed_text)
-    output.write('<h3 class="title">Waiting for rights assignment:</h3><br><div class="info"><ul>')
-    output_admin.write('<h3 class="title">Waiting for rights assignment:</h3><br><div class="info"><ul>')
+    #css_fix = """<style  TYPE="text/css">li.info{padding-left: 20px; !important; list-style:square !important;} </style>"""
+
+    
+    
+    output_html += '<h3 class="title">Waiting for rights assignment:</h3><br><div class="info"><ul>'
+    output_admin_html += '<h3 class="title">Waiting for rights assignment:</h3><br><div class="info"><ul>'
 
 
     #1. Members Awaiting Translation Rights (name and selected language(s) only)
@@ -170,8 +143,8 @@ if __name__ == "__main__":
       
       if len(assigned_languages[lang_code]):
           empty = False
-          output.write('<li class="info">%s : '% language)
-          output_admin.write('<li class="info">%s<ul>'% language)
+          output_html += '<li class="info">%s : '% language
+          output_admin_html += '<li class="info">%s<ul>'% language
           usernames = assigned_languages[lang_code].keys()
           email_content += """<html><body>
 This is an auto-generated email from the LTI Pootle server.  Any replies to it will be directed to the Pootle admin.<br><br>
@@ -180,25 +153,24 @@ The email addresses provided below are confidential and must not be shared witho
 <br><br><ul>"""
           usernames.sort()
           for username in usernames:
-            output.write('%s, ' % get_username_link(username))
+            output_html += '%s, ' % get_username_link(username)
             #email = User.objects.get(username=username).email
             #email = 'test'
             
             [email,projects] = assigned_languages[lang_code][username]
             email_content += '<li class="info">%s: <ul>' % get_username_mailto_link(username,email)
-            output_admin.write('<li class="info">%s: <ul>' % get_username_mailto_link(username,email))
+            output_admin_html += '<li class="info">%s: <ul>' % get_username_mailto_link(username,email)
             for project in projects:
                   email_content += '<li class="info">%s </li>' %(get_project_admin_link(lang_code,project))
-                  output_admin.write('<li class="info">%s </li>' %(get_project_admin_link(lang_code,project)))
+                  output_admin_html += '<li class="info">%s </li>' %(get_project_admin_link(lang_code,project))
                   
             email_content += '</ul></li>'
-            output_admin.write( '</ul></li>')
+            output_admin_html +=  '</ul></li>'
             #for username,projects in assigned_languages[lang_code].items():
                 
-          output.write('</li>')
+          output_html += '</li>'
           email_content += '</ul></body></html>'
-          output_admin.write( '</ul></li>')
-          
+          output_admin_html +=  '</ul></li>'
           
           if EMAIL_COORDS:
             #Find out the lang coordinators email_text
@@ -215,14 +187,41 @@ The email addresses provided below are confidential and must not be shared witho
             msg.attach_alternative(email_content, "text/html")
             msg.send()
 
-            
-
     if empty:
-      output.write('<li class="info">All members are currently assigned.</li>')
-      output_admin.write( '<li class="info">All members are currently assigned.</li>')
+      output_html += '<li class="info">All members are currently assigned.</li>'
+      output_admin_html +=  '<li class="info">All members are currently assigned.</li>'
       
-    output.write( '</ul></div><br>')
-    output_admin.write( '</ul></div><br>')
+    output_html +=  '</ul></div><br>'
+    output_admin_html +=  '</ul></div><br>'
+
+    return output_html,output_admin_html
+
+
+if __name__ == "__main__":
+
+    output_html,output_admin_html = get_html_members_waiting_status_approval(EMAIL_COORDS)
+
+    output=codecs.open('/home/pootle/HTML/translators.html',  'w',  "utf-8")
+
+    time_string = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+
+    html_begin =  """
+    <p style="font-size: 0.8em; color: #555; text-align: right;">
+    Generated: %s UTC. Update once every 8 hours</p>""" %(time_string)
+
+    #generated_time_html = """<p>Generated: %s UTC. Update once every 8 hours</p>""" %(time_string)
+    contact_link = '/contact/'
+
+    html_members_not_listed_text = """<p 
+    style="font-size: 0.9em; color: #555; text-align: right;">Members not listed on this page still need to configure their profiles.
+    <br>If you did not receive the activation email within 30 minutes of your visit to the Registration page,
+    <br>or have problems with logging in after following the activation email instructions,
+    <br>please <a href="%s">e-mail the Pootle admin</a> with a full description of the issue.</p>
+    """ %(contact_link)
+    
+    output.write(html_begin)
+    output.write(html_members_not_listed_text)
+    output.write(output_html)
 
     print 'Filters start'
     print strftime("%Y-%m-%d %H:%M:%S", gmtime())
@@ -270,7 +269,6 @@ The email addresses provided below are confidential and must not be shared witho
     print 'Filters stop'
     print strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-
     ###3. English Initial Proofreading Project
     original_en_proofreaders = []
 
@@ -316,9 +314,6 @@ The email addresses provided below are confidential and must not be shared witho
 
     output.write( """</table></p></div>""")
 
-    output.write(html_end)
-    #output_admin.write(html_end)
-
     output.close()
-    output_admin.close()
+
 

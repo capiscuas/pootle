@@ -38,6 +38,7 @@ from pootle_app.views.admin import util
 from pootle_app.models import Directory
 from pootle_project.models import Project
 from pootle.scripts.pootlelinks import get_username_link,get_username_mailto_link,get_project_stats_link,get_project_admin_link,get_language_admin_link,get_projectlanguage_admin_link,get_pootle_link
+from pootle.scripts.translators_report import get_html_members_waiting_status_approval
 
 @util.user_is_admin
 def view(request):
@@ -53,11 +54,12 @@ def view(request):
 
   return render_to_response("admin/admin_general_extra.html", template_vars, context_instance=RequestContext(request))  
 
-
 @util.user_is_admin
 def memberWaitingForStatusApproval(request):
+  print 'Generating Report memberWaitingForStatusApproval'
+  output_html,output_admin_html = get_html_members_waiting_status_approval(EMAIL_COORDS=False)
   template_vars = {
-    'html': file('/home/pootle/private/translators.admin.html').read(),
+    'html': output_admin_html,
     }
   return render_to_response("admin/admin_general_extra.html", template_vars, context_instance=RequestContext(request))
 
@@ -111,7 +113,7 @@ def memberWaitingForStatusRemoval(request):
             directory = permission.directory
             lang = proj = None
             if directory.is_translationproject():
-                  print directory
+                  #print directory
                   if directory.is_translationproject():
                     try:
                       proj = directory.translationproject.project

@@ -136,9 +136,9 @@ def main():
             print user.username,'languages:',user.pootleprofile.languages.all()
 
           if options.mail_filename and user.email:
-                  #Sending customized emails to each user
+                #Sending customized emails to each user
                 email_text = email_text_template % {'username':user.username, 'email':user.email}
-                #send_mail(options.mail_subject, email_text,'pootle-admin@thezeitgeistmovement.com',[user.email], fail_silently=False)
+                send_mail(options.mail_subject, email_text,'pootle-admin@thezeitgeistmovement.com',[user.email], fail_silently=False)
                 print 'Sent email to',user.email
 
       print 'Total users found:',total_users

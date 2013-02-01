@@ -71,12 +71,12 @@ def main():
           return
 
       if options.mail_filename:
-          if not os.path.exists(options.mail_filename):
-              print 'The file %s does not exists' % options.mail_filename
+          fullpath_mail_filename = os.path.join(os.getcwd(),options.mail_filename)
+          if not os.path.exists(fullpath_mail_filename):
+              print 'The file %s does not exists' % fullpath_mail_filename
               return
           else:
-              email_text_template = codecs.open(options.mail_filename, "r", "utf-8" ).read()
-    
+              email_text_template = codecs.open(fullpath_mail_filename, "r", "utf-8" ).read()
 
       script_num = args[0]
       if script_num == '0':
@@ -138,7 +138,7 @@ def main():
           if options.mail_filename and user.email:
                   #Sending customized emails to each user
                 email_text = email_text_template % {'username':user.username, 'email':user.email}
-                send_mail(options.mail_subject, email_text,'pootle-admin@thezeitgeistmovement.com',[user.email], fail_silently=False)
+                #send_mail(options.mail_subject, email_text,'pootle-admin@thezeitgeistmovement.com',[user.email], fail_silently=False)
                 print 'Sent email to',user.email
 
       print 'Total users found:',total_users

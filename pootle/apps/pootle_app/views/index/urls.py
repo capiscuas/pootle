@@ -25,5 +25,5 @@ urlpatterns = patterns('pootle_app.views.index',
     (r'^/?$', 'index.view'),
     (r'^about/$', 'about.view'),
     (r'^about/contributors/$', 'contributors.view'),
-    (r'^about/userpermissions/$', 'userpermissions.view'),
+    (r'^about/memberstatus/$', 'memberstatus.view'),
 )

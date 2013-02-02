@@ -1,14 +1,12 @@
 This is a list of TODO's and CHANGES that the Linguistic Team International needs for http://pootle.linguisticteam.org/
 
 TODO:
--check the CSS length of the progress, ex here http://pootle.linguisticteam.org/af/designing_the_future/
--remove some of the News filters
+-check the CSS length of the progress, ex here http://pootle.linguisticteam.org/af/designing_the_future/ , file a bug maybe
+ 
+FINISHED things:
+- Check the fuzzy strings patch http://bugs.locamotion.org/show_bug.cgi?id=2030
+- Added the Extra tab in the administrator menu with some useful reports. 
+- Hide the 'Top Contributors' section for non-superadmins (competition is not a motivator in our team)
 -find out the 'Unknown error' from production
 - ADD the list_users y create_report inside the commands
 - Restore crontabs in production server
-- Apply the fuzzy strings patch http://bugs.locamotion.org/show_bug.cgi?id=2030
-
-
-FINISHED things:
-- Added the Extra tab in the administrator menu with some useful reports. 
-- Hide the 'Top Contributors' section for non-superadmins (competition is not a motivator in our team)

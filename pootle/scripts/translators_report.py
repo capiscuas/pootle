@@ -207,7 +207,7 @@ if __name__ == "__main__":
 
     html_begin =  """
     <p style="font-size: 0.8em; color: #555; text-align: right;">
-    Generated: %s UTC. Update once every 8 hours</p>""" %(time_string)
+    Generated: %s UTC. Update once a day.</p>""" %(time_string)
 
     #generated_time_html = """<p>Generated: %s UTC. Update once every 8 hours</p>""" %(time_string)
     contact_link = '/contact/'

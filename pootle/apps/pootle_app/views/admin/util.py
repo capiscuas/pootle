@@ -212,7 +212,9 @@ def process_modelformset(request, model_class, queryset, **kwargs):
         # Hack to force reevaluation of same query
         queryset = queryset.filter()
     #LTI patch to show only 1 page in admin/users and admin/languages
-    objects = paginate(request, queryset,items=10000) 
+    #disabled it creates error in other pages
+    #objects = paginate(request, queryset,items=10000) 
+    objects = paginate(request, queryset) 
 
     return formset_class(queryset=objects.object_list), None, objects
 

@@ -96,6 +96,8 @@ def get_html_members_waiting_status_approval(EMAIL_COORDS):
               for lang in userprofile.languages.all():
                 if lang.code == 'templates':
                       continue
+                if proj.code == 'ignore_me':
+                      continue
                 if (proj.code != 'english_proofreading' and lang.code == 'en'):
                       continue
                 if(proj.code == 'english_proofreading' and lang.code != 'en'):

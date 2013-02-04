@@ -68,8 +68,8 @@ def edit_personal_info(request):
 
 def redirect_after_login(request):
     redirect_to = request.REQUEST.get(auth.REDIRECT_FIELD_NAME, None)
-
-    if not redirect_to or '://' in redirect_to or ' ' in redirect_to:
+    #LTI Patch, if the redirect is / (accessing from the portal, we redirect them to the profile)
+    if not redirect_to or '://' in redirect_to or ' ' in redirect_to or '/' == redirect_to:
         redirect_to = iri_to_uri('/accounts/%s/' % \
                                  urlquote(request.user.username))
 

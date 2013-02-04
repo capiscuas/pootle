@@ -92,11 +92,10 @@ def get_html_members_waiting_status_approval(EMAIL_COORDS):
           #print username
           userprofile = user.pootleprofile
           for proj in userprofile.projects.all():
-            if proj.code != 'test' and  proj.code != 'pootle' and proj.code != 'terminology': #We exclude those projects
+            #We analize the users excluding these projects (ignore_me,terminology)
+            if proj.code != 'ignore_me' and  proj.code != 'terminology':
               for lang in userprofile.languages.all():
                 if lang.code == 'templates':
-                      continue
-                if proj.code == 'ignore_me':
                       continue
                 if (proj.code != 'english_proofreading' and lang.code == 'en'):
                       continue
@@ -106,7 +105,7 @@ def get_html_members_waiting_status_approval(EMAIL_COORDS):
                 #print '/%s/%s/' %(lang.code,proj.code)
                 try:
                   d = Directory.objects.get(pootle_path='/%s/%s/' %(lang.code,proj.code))
-                  #print 'Existe','/%s/%s/' %(lang.code,proj.code)
+                  
                   user_permissions = get_permissions_by_username(username,d)
                   if check_profile_permission(userprofile,'suggest',d) or user_permissions is not None and 'view' in user_permissions:
                           if not assigned_users.has_key(lang.code):

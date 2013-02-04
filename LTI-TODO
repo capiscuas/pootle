@@ -2,7 +2,11 @@ This is a list of TODO's and CHANGES that the Linguistic Team International need
 
 TODO:
 -check the CSS length of the progress, ex here http://pootle.linguisticteam.org/af/designing_the_future/ , file a bug maybe
- 
+-Add a chat or whoisonline floating bar for those other users working on the same translationproject. (lang coord can see them all)
+-put a bug talking about the bold fuzzy
+-create a book repository RST format, Latex format (translator notes can show up)
+-create a comic repository (translator notes can show up)
+
 FINISHED things:
 - Check the fuzzy strings patch http://bugs.locamotion.org/show_bug.cgi?id=2030
 - Added the Extra tab in the administrator menu with some useful reports. 

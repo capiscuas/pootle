@@ -7,21 +7,21 @@ def get_username_mailto_link(username,email):
   
 def get_project_stats_link(lang_code,project):
       if lang_code and project:
-	return u'<a target="_parent" href="/%s/%s">%s</a>'%(lang_code,project,project)
+	       return u'<a target="_parent" href="/%s/%s">%s</a>'%(lang_code,project,project)
       else:
-	return u'<a target="_parent" href="/projects/%s/">%s</a>'%(project,project)
+	       return u'<a target="_parent" href="/projects/%s/">%s</a>'%(project,project)
   
 #Here the link is full URL because it's sent to emails too.
 
 def get_project_admin_link(lang_code,project):
       if lang_code and project:
-	  return u'<a target="_parent" href="http://pootle.linguisticteam.org/%s/%s/admin_permissions.html">%s</a>'%(lang_code,project,project)
+	       return u'<a target="_parent" href="http://pootle.linguisticteam.org/%s/%s/admin_permissions.html">%s</a>'%(lang_code,project,project)
       elif project:
-	return u'<a target="_parent" href="http://pootle.linguisticteam.org/projects/%s/permissions.html">%s</a>'%(project,project)
+	       return u'<a target="_parent" href="http://pootle.linguisticteam.org/projects/%s/permissions.html">%s</a>'%(project,project)
       elif lang_code:
-	return u'<a target="_parent" href="http://pootle.linguisticteam.org/%s/admin.html">%s</a>'%(lang_code,lang_code)
+	       return u'<a target="_parent" href="http://pootle.linguisticteam.org/%s/admin.html">%s</a>'%(lang_code,lang_code)
       else:
-	return ''
+	       return ''
     
 def get_language_admin_link(lang_code,lang_name):
   return u'<a target="_parent" href="/%s/admin.html">%s</a>'%(lang_code,lang_name)

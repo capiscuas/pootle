@@ -167,16 +167,18 @@ def memberWaitingForStatusRemoval(request):
         html += u'<li class="info"><b>%s</b><ul>' % get_language_admin_link(lang_code,lang_name)
 
         for proj_code,users_list in projects.items():
-              html += u'<li class="info"><b>%s</b><ul>' % get_project_admin_link(lang_code,proj)
+              if proj_code:
+                  html += u'<li class="info"><b>%s</b><ul>' % get_project_admin_link(lang_code,proj_code)
               for username,email in users_list:
                   html += u'<li class="info">User: <b>%s</b></li>' % get_username_mailto_link(username,email)
-              html += u"</li></ul>"
+              if proj_code:
+                  html += u"</li></ul>"
         html += u"</li></ul>"  
 
     if users_nolang:
-        html += u"<ul>Projects permissions(no lang)<ul>"    
+        html += u"<br><ul>Projects permissions(no lang)<ul>"    
         for proj_code,users_list in users_nolang:
-              html += u'<li class="info"><b>%s</b><ul>' % get_project_admin_link('',proj)
+              html += u'<li class="info"><b>%s</b><ul>' % get_project_admin_link('',proj_code)
               for username,email in users_list:
                   html += u'<li class="info">User: <b>%s</b></li>' % get_username_mailto_link(username,email)
               html += u"</li></ul>"

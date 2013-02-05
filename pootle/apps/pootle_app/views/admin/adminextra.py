@@ -117,7 +117,7 @@ def memberWaitingForStatusRemoval(request):
                       try:
                         proj = directory.translationproject.project
                       except:
-                        print 'Directory %r cannot retrieve translationproject' %directory
+                        #print 'Directory %r cannot retrieve translationproject' %directory
                         continue
 
                       proj_code = proj.code
@@ -148,14 +148,16 @@ def memberWaitingForStatusRemoval(request):
                       users[lang_combo][''].append([username,email])
 
                      #html += '<li class="info"><b>%s</b>: %s</li>' %(get_username_mailto_link(username,email),get_language_admin_link(lang.code,lang.name))
-            elif directory.is_project():
+            elif directory.is_project():   
                   proj = directory.project
+
                   if proj not in selected_projects:
                       proj_code = proj.code
                       user_waiting += 1
                       if not users_nolang.has_key(proj_code):
-                            users[proj_code] = []
-                      users_nolang[proj_code].appen([username,email])
+                            users_nolang[proj_code] = []
+                      users_nolang[proj_code].append([username,email])
+
                       #html += '<li class="info"><b>%s</b>: %s</li>' %(get_username_mailto_link(username,email),get_project_admin_link('',proj.code))
         
     if not user_waiting:
@@ -172,17 +174,17 @@ def memberWaitingForStatusRemoval(request):
               for username,email in users_list:
                   html += u'<li class="info">User: <b>%s</b></li>' % get_username_mailto_link(username,email)
               if proj_code:
-                  html += u"</li></ul>"
-        html += u"</li></ul>"  
+                  html += u"</ul></li>"
+        html += u"</ul></li>"  
 
     if users_nolang:
-        html += u"<br><ul>Projects permissions(no lang)<ul>"    
-        for proj_code,users_list in users_nolang:
+        html += u"<br>Only Projects permissions(no lang):<br><ul>"    
+        for proj_code,users_list in users_nolang.items():
               html += u'<li class="info"><b>%s</b><ul>' % get_project_admin_link('',proj_code)
               for username,email in users_list:
                   html += u'<li class="info">User: <b>%s</b></li>' % get_username_mailto_link(username,email)
-              html += u"</li></ul>"
-        html += u"</li></ul>"
+              html += u"</ul></li>"
+        html += u"</ul>"
 
         #html += '<li class="info"><b>%s</b>: %s</li>' %(get_username_mailto_link(username,email),get_project_admin_link('',proj.code))
     html += u"</ul></p>"    

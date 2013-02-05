@@ -61,7 +61,7 @@ def memberWaitingForStatusApproval(request):
 @util.user_is_admin
 def memberPreferencesView(request):
     #Dump of the user preferences and details in a html file (for admin)
-    html = u'<b>USERS PREFERENCES</b>:<ul>'
+    html = u'<h3>Members Preferences</h3><br><ul>'
     for user in User.objects.all():
       username = user.username
       html += '<li><b>%s</b>' % username
@@ -90,11 +90,14 @@ def memberPreferencesView(request):
 
 @util.user_is_admin
 def memberWaitingForStatusRemoval(request):
-    html = u'<h3 class="title">Users waiting for permissions removal</h3><div class="info"><p><ul>'
+    html = u'<h3 class="title">Members waiting for permissions removal</h3><div class="info"><p><ul>'
   
     #find those users that deleted some preferences projects or langs with already assigned permissions
     
     user_waiting = 0
+    users_nolang = {}
+    users = {}
+
     for user in User.objects.all():
       username = user.username
       email = user.email
@@ -104,34 +107,82 @@ def memberWaitingForStatusRemoval(request):
           selected_languages = userprofile.languages.all()
           selected_projects = userprofile.projects.all()
           permissions = userprofile.permissionset_set.all()
+          
           for permission in permissions:
             directory = permission.directory
             lang = proj = None
             if directory.is_translationproject():
                   #print directory
                   if directory.is_translationproject():
-                    try:
-                      proj = directory.translationproject.project
+                      try:
+                        proj = directory.translationproject.project
+                      except:
+                        print 'Directory %r cannot retrieve translationproject' %directory
+                        continue
+
+                      proj_code = proj.code
                       lang = directory.translationproject.language
+                      lang_combo = '%s:%s' %(lang.code,lang.name)
                       if lang not in selected_languages or proj not in selected_projects:
                         user_waiting += 1
-                        html += '<li class="info"><b>%s</b>: (%s, %s)</li>' %(get_username_mailto_link(username,email),lang.name,get_project_admin_link(lang.code,proj.code))
-                    except:
-                      print 'Directory %r cannot retrieve translationproject' %directory
+                        if not users.has_key(lang_combo):
+                          users[lang_combo] = {}
+
+                        if not users[lang_combo].has_key(proj_code):
+                           users[lang_combo] = {proj_code:[]}
+                        
+                        users[lang_combo][proj_code].append([username,email])
+                        
+                        #html += '<li class="info"><b>%s</b>: (%s, %s)</li>' %(get_username_mailto_link(username,email),lang.name,get_project_admin_link(lang.code,proj.code))
+                    
+
             elif directory.is_language():
                   lang = directory.language
+                  lang_combo = '%s:%s' %(lang.code,lang.name)
+
                   if lang not in selected_languages:
-                     user_waiting += 1
-                     html += '<li class="info"><b>%s</b>: %s</li>' %(get_username_mailto_link(username,email),get_language_admin_link(lang.code,lang.name))
+                      user_waiting += 1
+                      if not users.has_key(lang_combo):
+                            users[lang_combo] = {}
+                            users[lang_combo][''] = []
+                      users[lang_combo][''].append([username,email])
+
+                     #html += '<li class="info"><b>%s</b>: %s</li>' %(get_username_mailto_link(username,email),get_language_admin_link(lang.code,lang.name))
             elif directory.is_project():
                   proj = directory.project
                   if proj not in selected_projects:
+                      proj_code = proj.code
                       user_waiting += 1
-                      html += '<li class="info"><b>%s</b>: %s</li>' %(get_username_mailto_link(username,email),get_project_admin_link('',proj.code))
+                      if not users_nolang.has_key(proj_code):
+                            users[proj_code] = []
+                      users_nolang[proj_code].appen([username,email])
+                      #html += '<li class="info"><b>%s</b>: %s</li>' %(get_username_mailto_link(username,email),get_project_admin_link('',proj.code))
         
     if not user_waiting:
-        html +='<li class="info">No translators waiting.</li>'
-        
+        html +='<li class="info">No members waiting.</li>'
+    
+    for lang_combo,projects in users.items():
+        lang_code = lang_combo[:lang_combo.find(':')] #separate lang_combo
+        lang_name = lang_combo[lang_combo.find(':')+1:] #separate lang_combo
+        html += u'<li class="info"><b>%s</b><ul>' % get_language_admin_link(lang_code,lang_name)
+
+        for proj_code,users_list in projects.items():
+              html += u'<li class="info"><b>%s</b><ul>' % get_project_admin_link(lang_code,proj)
+              for username,email in users_list:
+                  html += u'<li class="info">User: <b>%s</b></li>' % get_username_mailto_link(username,email)
+              html += u"</li></ul>"
+        html += u"</li></ul>"  
+
+    if users_nolang:
+        html += u"<ul>Projects permissions(no lang)<ul>"    
+        for proj_code,users_list in users_nolang:
+              html += u'<li class="info"><b>%s</b><ul>' % get_project_admin_link('',proj)
+              for username,email in users_list:
+                  html += u'<li class="info">User: <b>%s</b></li>' % get_username_mailto_link(username,email)
+              html += u"</li></ul>"
+        html += u"</li></ul>"
+
+        #html += '<li class="info"><b>%s</b>: %s</li>' %(get_username_mailto_link(username,email),get_project_admin_link('',proj.code))
     html += u"</ul></p>"    
     template_vars = {'html': html,}
     return render_to_response("admin/admin_general_extra.html", template_vars, context_instance=RequestContext(request))

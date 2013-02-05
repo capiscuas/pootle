@@ -6,6 +6,10 @@ TODO:
 -put a bug talking about the bold fuzzy
 -create a book repository RST format, Latex format (translator notes can show up)
 -create a comic repository (translator notes can show up)
+-write pootle bug talking about proofread workflow, permissions activation
+  - show the current links of the memberStatus, and html pages of the extra functionalities, use the wiki in our github to show screenshots, point to our code, etc.
+
+- check on the statistics bug http://bugs.locamotion.org/show_bug.cgi?id=1668
 
 FINISHED things:
 - Check the fuzzy strings patch http://bugs.locamotion.org/show_bug.cgi?id=2030

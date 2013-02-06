@@ -130,7 +130,7 @@ def memberWaitingForStatusRemoval(request):
                           users[lang_combo] = {}
 
                         if not users[lang_combo].has_key(proj_code):
-                           users[lang_combo] = {proj_code:[]}
+                           users[lang_combo][proj_code] = []
                         
                         users[lang_combo][proj_code].append([username,email])
                         

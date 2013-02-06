@@ -1,0 +1,30 @@
+{% extends "language_base.html" %}
+
+{% load assets i18n baseurl app_tags%}
+
+{% block title %}{% trans "Users" %} | {{ block.super }}{% endblock %}
+
+{% block breadcrumbs %}
+{{ block.super }}<li>{% trans "Users" %}</li>
+{% endblock %}
+
+{% block body_id %}languageusers{% endblock %}
+
+{% block content %}
+{% show_active_tabmenu_css 'languageusers' %}
+
+<style  TYPE="text/css"> 
+td,th {
+    padding: 5px 5px !important;
+}
+</style>
+<p class="info">{% trans "Below you can see the list of users that have selected this language." %}</p>
+
+{{html|safe}}
+
+</div>
+{% endblock %}
+
+{% block scripts_extra %}
+<script type="text/javascript" src='{{ "js/admin.js"|m }}'></script>
+{% endblock %}

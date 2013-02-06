@@ -4,5 +4,7 @@
   <li><a href='{{ "notices"|l }}' class="languagenews" title="{% trans 'Language news' %}">{% trans "News" %}{% if user.is_superuser or request.permissions.administrate %} <span class="admin">+</span>{%endif%}</a></li>
   {% if user.is_superuser or request.permissions.administrate %}
   <li><a href='{{ "admin.html"|l }}' class="languageadmin admintab" title="{% trans 'Administrate your language permissions' %}">{% trans "Permissions" %}</a></li>
+  <!-- LTI addition Users -->
+  <li><a href='{{ "users.html"|l }}' class="languageusers admintab" title="{% trans 'List the members of a language team' %}">{% trans "Users" %}</a></li>
   {% endif %}
 </ul>

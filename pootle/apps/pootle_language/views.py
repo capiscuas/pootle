@@ -38,6 +38,8 @@ from pootle_misc.util import nice_percentage, jsonify, ajax_required
 from pootle_profile.models import get_profile
 from pootle_statistics.models import Submission
 
+#LTI patch: new tab that will list all the team members
+from pootle_language.users import language_users
 
 def get_last_action(translation_project):
     try:
@@ -176,3 +178,4 @@ def language_admin(request, language_code):
         "feed_path": '%s/' % language.code,
     }
     return admin_permissions(request, language.directory, "language/language_admin.html", template_vars)
+

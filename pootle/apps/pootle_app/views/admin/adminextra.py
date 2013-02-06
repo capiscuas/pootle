@@ -90,6 +90,7 @@ def memberPreferencesView(request):
 
 @util.user_is_admin
 def memberWaitingForStatusRemoval(request):
+    print 'START Members waiting for permissions removal'
     html = u'<h3 class="title">Members waiting for permissions removal</h3><div class="info"><p><ul>'
   
     #find those users that deleted some preferences projects or langs with already assigned permissions
@@ -189,6 +190,7 @@ def memberWaitingForStatusRemoval(request):
         #html += '<li class="info"><b>%s</b>: %s</li>' %(get_username_mailto_link(username,email),get_project_admin_link('',proj.code))
     html += u"</ul></p>"    
     template_vars = {'html': html,}
+    print 'END Members waiting for permissions removal'
     return render_to_response("admin/admin_general_extra.html", template_vars, context_instance=RequestContext(request))
     
 @util.user_is_admin
